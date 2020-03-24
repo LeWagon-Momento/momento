@@ -10,9 +10,23 @@ class PostsController < ApplicationController
   end
 
   def new
+    @trip = Trip.find(params[:trip_id])
+    @post = Post.new
   end
 
   def create
+    @post = Post.new(params_posts)
+    @trip = Trip.find(params[:trip_id])
+    @post.trip = @trip
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to trip_path(@trip) }
+        format.json
+      else
+        format.html { render :new }
+        format.json
+      end
+    end
   end
 
   def edit
@@ -31,6 +45,6 @@ class PostsController < ApplicationController
   end
 
   def params_posts
-    params.require(:post).permit(:name, :description, :address, :lat, :long, :date)
+    params.require(:post).permit(:name, :description, :address, :latitude, :longitude, :date, :photos)
   end
 end

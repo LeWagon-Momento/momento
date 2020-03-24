@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :trips
   belongs_to :country
+  has_one_attached :photo
 end

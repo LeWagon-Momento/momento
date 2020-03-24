@@ -1,2 +1,13 @@
 <h1>This is the trips show page</h1>
-<p><%= @trip %></p>
+<p><%= @trip.name %></p>
+<ul>
+  <% @trip.posts.each do |post| %>
+    <li>
+      <%= post.name %>
+      <%= post.description %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to new_trip_post_path(@trip) do %>
+New post
+<% end %>

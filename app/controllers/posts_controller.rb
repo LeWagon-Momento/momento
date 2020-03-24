@@ -5,8 +5,18 @@ class PostsController < ApplicationController
   end
 
   def show
+    # show page for post is just to check if mapbox is working, this will be
+    # integrated to the new form page
     @post = Post.find(params[:id])
     @trip = Trip.find(params[:trip_id])
+    @posts = Post.geocoded.where(id: params[:id]) #returns flats with coordinates
+
+    @markers = @posts.map do |post|
+      {
+        lat: post.latitude,
+        lng: post.longitude
+      }
+    end
   end
 
   def new

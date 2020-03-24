@@ -10,9 +10,15 @@ class TripsController < ApplicationController
   end
 
   def new
+    @trip = Trip.new
   end
 
   def create
+    @trip = Trip.new(params_trips)
+    @trip.user = current_user
+    @trip.save
+
+    redirect_to trip_path(@trip)
   end
 
   def edit

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "trips#show"
   resources :trips do
     resources :posts
   end

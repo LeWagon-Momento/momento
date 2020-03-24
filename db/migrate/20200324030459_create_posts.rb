@@ -7,7 +7,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.float :lat
       t.float :long
       t.date :date
-      t.references :trips, foreign_key: true
+      t.references :trip, foreign_key: true
 
       t.timestamps
     end

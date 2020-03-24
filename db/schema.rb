@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_24_040931) do
+ActiveRecord::Schema.define(version: 2020_03_24_060741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(version: 2020_03_24_040931) do
 
   create_table "countries", force: :cascade do |t|
     t.string "name"
-    t.float "lat"
-    t.float "long"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,13 +48,13 @@ ActiveRecord::Schema.define(version: 2020_03_24_040931) do
     t.string "name"
     t.text "description"
     t.string "address"
-    t.float "lat"
-    t.float "long"
+    t.float "latitude"
+    t.float "longitude"
     t.date "date"
-    t.bigint "trips_id"
+    t.bigint "trip_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["trips_id"], name: "index_posts_on_trips_id"
+    t.index ["trip_id"], name: "index_posts_on_trip_id"
   end
 
   create_table "trips", force: :cascade do |t|
@@ -65,8 +65,8 @@ ActiveRecord::Schema.define(version: 2020_03_24_040931) do
     t.string "vanity_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "users_id"
-    t.index ["users_id"], name: "index_trips_on_users_id"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -78,14 +78,14 @@ ActiveRecord::Schema.define(version: 2020_03_24_040931) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "countries_id"
-    t.index ["countries_id"], name: "index_users_on_countries_id"
+    t.bigint "country_id"
+    t.index ["country_id"], name: "index_users_on_country_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "posts", "trips", column: "trips_id"
-  add_foreign_key "trips", "users", column: "users_id"
-  add_foreign_key "users", "countries", column: "countries_id"
+  add_foreign_key "posts", "trips"
+  add_foreign_key "trips", "users"
+  add_foreign_key "users", "countries"
 end

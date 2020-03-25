@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id]) # not sure why i am using this as i just copied and pasted from lecture. need to ask why
   end
 end
 

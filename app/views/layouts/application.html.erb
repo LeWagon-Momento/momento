@@ -24,11 +24,14 @@
         </div>
       </div>
       <!-- End of the navbar -->
-   
-    <div class="main-body">
-      <%= yield %>
-    </div>
 
+    <% unless @no_container %>
+      <div class="main-body">
+        <%= yield %>
+      </div>
+    <% else %>
+      <%= yield %>
+    <% end %>
 <!--      <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p> -->
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->

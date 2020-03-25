@@ -23,5 +23,7 @@ import { textCheck } from '../plugins/wiki_api';
 
 
 initMapbox();
+import '../plugins/draggable.js'
+
 wikiApi();
 textCheck();

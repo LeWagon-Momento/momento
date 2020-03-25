@@ -30,6 +30,12 @@ class TripsController < ApplicationController
   def destroy
   end
 
+  # Review Trip method
+  def review
+    @trip = Trip.find(params[:trip_id])
+    @posts = Post.where(trip_id: params[:trip_id]).all
+  end
+
   private
 
   def trip_find

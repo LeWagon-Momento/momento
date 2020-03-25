@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'users/:id', to: 'users#show' # don't forget to commit this too
+  get 'users/:id/edit', to: 'users#edit' # took reference from lecture
   resources :trips do
     resources :posts
   end

@@ -1,9 +1,25 @@
 .info-header {
   color: $white;
+  font-family: $headers-font;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 25px;
+}
 
+.info-city {
+  width: 25px;
+  background-color: $white;
 }
 
 .info-card {
+  margin-left: 25px;
+}
+
+.info-button {
+  width: 30px;
+  color: $white;
+  font-family: $headers-font;
+  font-size: 15px;
 }
 
 

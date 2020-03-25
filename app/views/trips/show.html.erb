@@ -35,12 +35,24 @@
       <div id="flip" class="text-center">Click to see trip details</div>
 
       <div id="panel">
+       <div class="d-inline-flex">
+        <!-- This is the left items -->
         <div class="d-flex flex-column info-card">
-          <p class="info-header"><%= @trip.name %></p>
+          <!-- This is the trip name -->
+          <div class="info-header">
+            <%= @trip.name %>
+          </div>
+          <!-- This is the cities tags -->
           <div>
-            <div class="">Singapore</div>
+            <div class="badge badge-pill badge-light">Singapore</div>
           </div>
         </div>
+        <!-- This is the end button -->
+        <div class="info-button">
+          end trip
+        </div>
+       </div>
+
       </div>
     </div>
 

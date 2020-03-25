@@ -1,7 +1,7 @@
-<h1>Users#</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-
-<%= @user.name %>
-<%= @user.email %>
-<%= @user.country.name %>
-
+<img src=<%= image_url('cover-picture.png')  %> alt=""> <!-- continue editing the picture to make it fit as how to figma is -->
+<div class="container">
+  <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-large", alt: "avatar-bordered" %>
+  <label for="fname"> <%= @user.name %> </label>
+  <label for="fname"> <%= @user.email %> </label>
+  <label for="fname"> <%= @user.country.name %> </label>
+</div>

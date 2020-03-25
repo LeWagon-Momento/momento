@@ -20,6 +20,8 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 import { initMapbox } from '../plugins/init_mapbox';
 import { wikiApi } from '../plugins/wiki_api';
 import { textCheck } from '../plugins/wiki_api';
+import { readURL } from '../plugins/display_image';
+import { initPostMapbox } from '../plugins/post_mapbox';
 
 
 initMapbox();
@@ -27,3 +29,5 @@ import '../plugins/draggable.js'
 
 wikiApi();
 textCheck();
+readURL();
+initPostMapbox();

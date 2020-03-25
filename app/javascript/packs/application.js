@@ -25,6 +25,8 @@ import { initPostMapbox } from '../plugins/post_mapbox';
 
 
 initMapbox();
+import '../plugins/draggable.js'
+
 wikiApi();
 textCheck();
 readURL();

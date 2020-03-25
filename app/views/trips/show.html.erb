@@ -1,3 +1,19 @@
+
+<div>
+  <!-- Start of Trip title -->
+  <h1><%= @trip.name %></h1>
+</div>
+
+<!-- Circle marker -->
+<div>
+<p class="start-marker"></p>
+</div>
+
+<!-- The timeline line -->
+<div>
+
+</div>
+
 <h1>This is the trips show page</h1>
 <p><%= @trip.name %></p>
 <ul>
@@ -11,3 +27,59 @@
 <%= link_to new_trip_post_path(@trip) do %>
 New post
 <% end %>
+
+<section class="timeline">
+
+
+  <ul>
+    <li>
+      <div class="content", style="background-image: url('https://source.unsplash.com/random');">
+        <h2>
+          <time>2016</time>
+        </h2>
+      </div>
+    </li>
+    <li>
+      <div class="content">
+        <h2>
+          <time>2015</time>
+        </h2>
+      </div>
+    </li>
+    <li>
+      <div class="content">
+        <h2>
+          <time>2012</time>
+        </h2>
+      </div>
+    </li>
+    <li>
+      <div class="content">
+        <h2>
+          <time>2010</time>
+        </h2>
+      </div>
+    </li>
+    <li>
+      <div class="content">
+        <h2>
+          <time>2008</time>
+        </h2>
+      </div>
+    </li>
+    <li>
+      <div class="content">
+        <h2>
+          <time>2007</time>
+        </h2>
+      </div>
+    </li>
+    <li>
+      <div class="content">
+        <h2>
+          <time>2004</time>
+        </h2>
+      </div>
+    </li>
+  </ul>
+</section>

@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'users/show'
-  get 'users/edit'
   devise_for :users
+  get 'users/:id', to: 'users#show'
   resources :trips do
     resources :posts
   end

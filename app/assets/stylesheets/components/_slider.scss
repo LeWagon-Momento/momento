@@ -1,0 +1,43 @@
+.info-header {
+  color: $white;
+  font-family: $headers-font;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 25px;
+}
+
+.info-city {
+  width: 25px;
+  background-color: $white;
+}
+
+.info-card {
+  margin-left: 25px;
+}
+
+.info-button {
+  width: 30px;
+  color: $white;
+  font-family: $headers-font;
+  font-size: 15px;
+}
+
+
+
+// jquery slider
+#flip {
+  padding: 5px;
+  text-align: center;
+  background-color: $main-color;
+  color: white;
+  font-family: $headers-font;
+  font-weight: bold;
+}
+
+#panel {
+  width: 100vh;
+  height: 200px;
+  display: none;
+  background-image: url('https://images.unsplash.com/photo-1537522306408-8435f315b2e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+  object-fit: contain;
+}

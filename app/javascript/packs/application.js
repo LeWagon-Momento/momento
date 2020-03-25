@@ -18,5 +18,10 @@
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { wikiApi } from '../plugins/wiki_api';
+import { textCheck } from '../plugins/wiki_api';
+
 
 initMapbox();
+wikiApi();
+textCheck();

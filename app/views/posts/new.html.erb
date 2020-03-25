@@ -4,8 +4,14 @@
 <%= simple_form_for [@trip, @post] do |f| %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :address %>
+  <%= f.input :description, input_html: { id: "wiki-info"} %>
+  <%= f.input_field :wiki, as: :boolean, class: "text-checkbox" %>
+  <%= f.input :address, input_html: { id: "search" } %>
+  <%= button_tag(type: 'button', id: "wiki-button") do %>
+    Search wiki
+  <% end %>
   <%= f.input :date %>
   <%= f.button :submit %>
 <% end %>
+
+

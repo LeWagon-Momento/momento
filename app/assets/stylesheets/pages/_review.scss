@@ -1,0 +1,55 @@
+// This page is for review trip only
+
+
+// All text modifications
+.title-review{
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
+  margin: 0 auto;
+  text-align: center;
+  color: $main-color;
+  margin: 60px;
+}
+.title-review p{
+  font-family: $headers-font;
+  font-size:22px;
+}
+
+
+// All images modifications
+.very-small-image-review img{
+  width:100%;
+  height: 50px;
+  background-image: center;
+  object-fit: cover;
+}
+.img-small-review{
+  width:100%;
+  height:200px;
+  background-image: center;
+  object-fit: cover;
+}
+.img-background-review{
+ width:100%;
+ height: 400px;
+ background-position:center;
+ background-size: cover;
+ object-fit: cover;
+}
+
+
+// Card review
+.card-review{
+  width:48%;
+  height:350px;
+}
+
+
+// Container for this page
+.container-review{
+  margin: 50px;
+}
+.middle-card-review{
+  justify-content:space-between;
+}
+

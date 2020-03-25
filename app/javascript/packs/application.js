@@ -21,6 +21,16 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initTimeline } from '../plugins/init_timeline';
 import { initSlider } from '../plugins/init_slider';
 
+
+
+import { wikiApi } from '../plugins/wiki_api';
+import { textCheck } from '../plugins/wiki_api';
+
+
+import '../plugins/draggable.js'
+
 initMapbox();
 initTimeline();
 initSlider();
+wikiApi();
+textCheck();

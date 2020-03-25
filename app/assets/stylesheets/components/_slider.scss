@@ -1,0 +1,27 @@
+.info-header {
+  color: $white;
+
+}
+
+.info-card {
+}
+
+
+
+// jquery slider
+#flip {
+  padding: 5px;
+  text-align: center;
+  background-color: $main-color;
+  color: white;
+  font-family: $headers-font;
+  font-weight: bold;
+}
+
+#panel {
+  width: 100vh;
+  height: 200px;
+  display: none;
+  background-image: url('https://images.unsplash.com/photo-1537522306408-8435f315b2e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+  object-fit: contain;
+}

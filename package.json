@@ -6,7 +6,8 @@
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "mapbox-gl": "^1.9.0",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "scrollreveal": "^4.0.6"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.10.3"

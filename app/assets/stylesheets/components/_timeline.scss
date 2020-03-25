@@ -1,171 +1,268 @@
-@import url(https://fonts.googleapis.com/css?family=Lato);
 
-$title-background: #FFFFFF;
-$background-color: #FFFFFF;
-$content-background-color: $main-color;
-$content-background-gradient: $main-color;
-$time-color: $gray;
-$text-color: $gray;
-$content-width: 200px;
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+
+
+
+/* This is the CSS for the timeline. Please do not touch */
+$dark-primary: #303F9F;
+$light-primary: #C5CAE9;
+$text: #FFFFFF;
+$primary-text: #212121;
+$secondary-text: #757575;
+
+section {
+  padding: 100px 0;
 }
 
+html, body {
+  overflow-x: hidden;
+}
 
-.timeline{
-  color: $text-color;
+body {
+  font-family: 'Roboto';
+  font-size: 17px;
+  font-weight: 400;
+  background-color: #eee;
+}
 
-  h1,
-  ul li .content h2{
-    text-shadow: 1px 1px 1px rgba(56, 56, 56, 0.5);
+h1 {
+  font-size: 200%;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+
+header {
+  background: $main-color;
+  color: $text;
+  padding: 150px 0;
+
+  p {
+    font-family: 'Allura';
+    color: rgba(255, 255, 255, .2);
+    margin-bottom: 0;
+    font-size: 60px;
+    margin-top: -30px;
+
   }
+}
 
-  h1{
-    background: $title-background;
-    padding: 70px 0;
-    font-size: 2.5em;
-    text-align: center;
+.timeline {
+
+  position: relative;
+
+  &::before {
+    content: '';
+    background: $main-color;
+    width: 5px;
+    height: 95%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
+}
 
-  ul{
-    background: $background-color;
-    padding: 50px 0;
+.timeline-item {
+  width: 100%;
+  margin-bottom: 70px;
 
-    li{
-      background: $content-background-color;
-      position: relative;
-      margin: 0 auto;
-      margin-left: 40px;
-      width: 12px;
-      padding-bottom: 40px;
-      list-style-type: none;
+  &:nth-child(even) {
 
-      &:last-child{
-        padding-bottom: 7px;
+    .timeline-content {
+      float: right;
+      padding: 40px 30px 10px 30px;
+
+      .date {
+        width: 100px;
+        right: auto;
+        left: 161px;
+        border-top-right-radius: 10px;
       }
 
-      &:before{
+      &::after {
         content: '';
         position: absolute;
-        left: 50%;
-        top: 0;
-        transform: translateX(-50%);
-        -webkit-transform: translateX(-50%);
-        border-radius: 50%;
-        height: 32px;
-        width: 32px;
-        background-color: $yellow;
-        border: solid;
-        border-width: 5px;
-        border-color: $blue-color;
-      }
-
-      .hidden {
-        opacity: 0;
-      }
-
-      .content{
-        background-image: center;
-        object-fit: contain;
-        background-position: center;
-        position: relative;
-        top: -80px;
-        width: $content-width;
-        padding: 24px;
-        border-radius: 10px;
-
-        h2{
-          color: $time-color;
-          padding-bottom: 10px;
-          text-align: center;
-        }
-
-        p{
-          text-align: center;
-        }  .timeline ul li:nth-child(even) .content {
-    left: calc(-41vw - 45px);
-  }
-
-        &:before{
-          content: '';
-          background: $content-background-color;
-          position: absolute;
-          top: 90px;
-          width: 38px;
-          height: 5px;
-        }
-      }
-
-      &:nth-child(odd) .content {
-        left: 160px;
-        background: $content-background-color;
-        background: -webkit-linear-gradient(-45deg, $content-background-gradient , $content-background-color);
-        background: linear-gradient(-45deg,  $content-background-gradient , $content-background-color);
-      }
-
-      &:nth-child(odd) .content:before {
-        left: -144px;
-        width: 160px;
-      }
-
-      &:nth-child(even) .content {
-        left: 160px;
-        background: $content-background-color;
-        background: -webkit-linear-gradient(-45deg, $content-background-gradient , $content-background-color);
-        background: linear-gradient(-45deg,  $content-background-gradient , $content-background-color);
-      }
-
-      &:nth-child(even) .content:before {
-        left: -144px;
-        width: 160px;
+        border-style: solid;
+        width: 0;
+        height: 0;
+        top: 30px;
+        left: -15px;
+        // border-width: 10px 15px 10px 0;
+        border-color: transparent #f5f5f5 transparent transparent;
       }
     }
   }
-}
 
-/* -------------------------
-   ----- Media Queries -----
-   ------------------------- */
-
-@media screen and (max-width: 411px) {
-  .timeline ul li .content {
-    width: 200px;
-    height: 118px;
-  }
-  .timeline ul li:nth-child(even) .content {
-    width: 200px;
-    height: 118px;
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
   }
 }
 
-// @media screen and (max-width: 700px) {
-//   .timeline ul li {
-//     margin-left: 20px;
 
-//     .content {
-//       width: calc(100vw - 100px);
+.timeline-content {
+  position: relative;
+  width: 45%;
+  padding: 10px 30px;
+  border-radius: 10px;
+  background: #f5f5f5;
+  box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
 
-//       h2{
-//         text-align: initial;
-//       }
-//     }
+  &::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    width: 0;
+    height: 0;
+    top: 30px;
+    right: -15px;
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent #f5f5f5;
 
-//     &:nth-child(even) .content {
-//       left: 45px;
-//       background: $content-background-color;
-//       background: -webkit-linear-gradient(-45deg, $content-background-gradient , $content-background-color);
-//       background: linear-gradient(-45deg,  $content-background-gradient , $content-background-color);
-//     }
+  }
+}
 
-//     &:nth-child(even) .content:before {
-//       left: -33px;
-//     }
-//   }
-// }
+.timeline-img {
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  background-color: $yellow;
+  border: solid;
+  border-width: 5px;
+  border-color: $second-color;
+
+  position: absolute;
+  left: 50%;
+  margin-top: 25px;
+  margin-left: -15px;
+}
+
+a {
+  background: $second-color;
+  color: $text;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  display: inline-block;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px -1px rgba(0, 0, 0, .6);
+
+  &:hover, &:active, &:focus {
+    background: darken($main-color, 10%);
+    color: $text;
+    text-decoration: none;
+  }
+
+}
+
+.timeline-card {
+  padding: 0!important;
+
+  p {
+    padding: 0 20px;
+  }
+
+  a {
+    margin-left: 20px;
+  }
+}
+
+.timeline-item {
+  .timeline-img-header {
+      background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0, .4)), url('https://picsum.photos/1000/800/?random') center center no-repeat;
+      background-size: cover;
+      object-fit: cover;
+    }
+}
+
+.timeline-img-header {
+
+  height: 170px;
+  width: 261px;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 10px;
+
+  h2 {
+    color: $text;
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+  }
+}
+
+blockquote {
+  margin-top: 30px;
+  color: $secondary-text;
+  border-left-color: $primary;
+  padding: 0 20px;
+}
+
+.date {
+  background: $main-color;
+  display: inline-block;
+  color: $text;
+  padding: 10px;
+  position: absolute;
+
+  top: 0;
+  left: 161px;
+  width: 100px;
+  border-top-right-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .timeline {
+
+    &::before {
+      left: 50px;
+      top: 150px;
+    }
+
+    .timeline-img {
+      left: 50px;
+    }
+
+    .timeline-content {
+      max-width: 100%;
+      width: auto;
+      margin-left: 70px;
+    }
+
+    .timeline-item {
+
+      &:nth-child(even) {
+
+        .timeline-content {
+          float: none;
+
+        }
+      }
+
+      &:nth-child(odd) {
+
+        .timeline-content {
+
+          &::after {
+            content: '';
+            position: absolute;
+            border-style: solid;
+            width: 0;
+            height: 0;
+            top: 30px;
+            left: -15px;
+            // border-width: 10px 15px 10px 0;
+            border-color: transparent #f5f5f5 transparent transparent;
+          }
+        }
+
+      }
+    }
+  }
+
+}
+/* This is the CSS for the timeline. Please do not touch  */

@@ -4,9 +4,11 @@
     <title>Momento</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
+    <%= javascript_include_tag "application" %>
   </head>
 
   <body>
@@ -24,14 +26,14 @@
         </div>
       </div>
       <!-- End of the navbar -->
-   
+
     <div class="main-body">
       <%= yield %>
     </div>
 
 <!--      <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p> -->
-    <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
+     <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>
   </body>
 </html>

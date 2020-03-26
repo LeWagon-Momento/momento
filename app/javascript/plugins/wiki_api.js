@@ -1,4 +1,5 @@
 const wikiApi = () => {
+  const search = document.getElementById("wiki-button");
   if(search) {
     search.addEventListener('click', (event) => {
       let searchValue = document.querySelector('#search')

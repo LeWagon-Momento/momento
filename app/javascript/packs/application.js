@@ -16,20 +16,20 @@
 // const imagePath = (name) => images(name, true)
 
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
-import { initMapbox } from '../plugins/init_mapbox';
+// import { initMapbox } from '../plugins/init_mapbox';
 import { initTimeline } from '../plugins/init_timeline';
 import { initSlider } from '../plugins/init_slider';
-import { wikiApi } from '../plugins/wiki_api';
-import { textCheck } from '../plugins/wiki_api';
-import { readURL } from '../plugins/display_image';
+// import { wikiApi } from '../plugins/wiki_api';
+// import { textCheck } from '../plugins/wiki_api';
+// import { readURL } from '../plugins/display_image';
 import { initPostMapbox } from '../plugins/post_mapbox';
 import '../plugins/draggable.js'
 
-initMapbox();
+// initMapbox();
 initTimeline();
 initSlider();
-wikiApi();
-textCheck();
-readURL();
+// wikiApi();
+// textCheck();
+// readURL();
 initPostMapbox();
 

@@ -5,7 +5,7 @@ const initPostMapbox = () => {
   const myToken = "pk.eyJ1Ijoia2VubmNob25nIiwiYSI6ImNrN3ljczdyczA1YW0zbHJ0NGt4NHgyczkifQ.1NZnPvnWPumtduEfgzPkjg";
   // This is my token for MapBox
   // 1. Get the field value entered by the user in the input-text field. querySelector the form
-  const form = document.querySelector('#wiki-button');
+  // const form = document.querySelector('#wiki-button');
   // method to send data to MapBox
   // 2. have an addEventListener to the submit button within the form.
   // Listen the form and dont forget to preventDefault

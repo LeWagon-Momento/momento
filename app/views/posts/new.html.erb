@@ -9,7 +9,7 @@
     <label class="button-small-post-new">
       <i class="fas fa-camera"></i> New photo
       <span style="display:none;">
-        <%= f.input :photos, as: :file, input_html: { multiple: true, id: "display-image" } %>
+        <%= f.input :photos, as: :file, input_html: { multiple: true, accept: "image/*", id: "display-image" } %>
       </span>
     </label>
     <!-- Name input -->

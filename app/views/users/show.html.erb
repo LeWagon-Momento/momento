@@ -1,13 +1,23 @@
  <%= image_tag 'banner-picture.png', class: 'banner' %> <!-- COVERPICTURE ON OUTSIDE BECAUSE BASED ON FIGMA IT IS AFTER NAV BAR-->
 <div class="container">
   <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-large", alt: "avatar-bordered" %>
-  <label for="fname"> <%= @user.name %> </label>
-  <label for="fname"> <%= @user.email %> </label>
-  <label for="fname"> <%= @user.country.name %> </label>
+  <form>
+    <div class="form-group">
+      <input type="email" class="form-control" value= <%= @user.name %> style="border: none;"> <!-- displaying of name -->
+      <!-- <label for="profile-name-input">name</label> --> <!-- this is not neccessary anymore but just putting it here just in case of anything -->
+  <br>
+      <label for="email-input">Email</label>
+      <input type="email" class="form-control" value=<%= @user.email %> style="border: none;"> <!-- displaying of email -->
+
+      <label for="host-country-input">Host Country</label>
+      <input type="email" class="form-control" value=<%= @user.country.name %>style="border: none;"> <!-- displaying of host country -->
+    </div>
+  </form>
 </div>
 
+
+
+
 <!-- continue editing the picture to make it fit as how to figma is --> IN PROG
-<!-- and create a new css component file for image tag  -->
-<!-- re do this part -->
 
 

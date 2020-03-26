@@ -8,5 +8,3 @@ class UsersController < ApplicationController
   end
 end
 
-# // This
-

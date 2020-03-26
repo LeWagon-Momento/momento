@@ -72,7 +72,7 @@ header {
       float: right;
       padding: 40px 30px 10px 30px;
 
-      .date {
+      .timeline-date {
         width: 100px;
         right: auto;
         left: 161px;
@@ -201,7 +201,7 @@ blockquote {
   padding: 0 20px;
 }
 
-.date {
+.timeline-date {
   background: $main-color;
   display: inline-block;
   color: $text;

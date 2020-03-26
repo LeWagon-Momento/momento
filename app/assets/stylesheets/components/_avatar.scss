@@ -2,9 +2,12 @@
   width: 40px;
   border-radius: 50%;
 }
-.avatar-large {
-  width: 56px;
+.avatar-large { // this is the avatar in the profile page info
+  width: 150px;
   border-radius: 50%;
+  position: relative; // allows picture to move around
+  bottom: 99px; // moves picture to be in the middle of cover picture
+  left: 88px;
 }
 .avatar-bordered {
   width: 40px;

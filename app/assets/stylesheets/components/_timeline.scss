@@ -1,6 +1,36 @@
+.info-button {
+  width: 60px;
+  border-radius: 50px;
+}
 
+.upload {
+  // background-image: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+  background-color: $gray;
+}
 
+.last-timeline-img-header {
+  height: 170px;
+  width: 261px;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background: url('https://semantic-ui.com/images/wireframe/image.png') center center no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
 
+}
+
+.new-post-text {
+  position: relative;
+  left: 114px;
+  top: -16px;
+  font-size: 11px;
+  width: 161px;
+  text-align: center;
+  font-style: italic;
+
+}
 
 
 /* This is the CSS for the timeline. Please do not touch */
@@ -106,8 +136,8 @@ header {
   width: 45%;
   padding: 10px 30px;
   border-radius: 10px;
-  background: #f5f5f5;
-  box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
+  // background: #f5f5f5;
+
 
   &::after {
     content: '';
@@ -166,7 +196,7 @@ a {
   }
 
   a {
-    margin-left: 20px;
+    // margin-left: 20px;
   }
 }
 
@@ -175,6 +205,7 @@ a {
       background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0, .4)), url('https://picsum.photos/1000/800/?random') center center no-repeat;
       background-size: cover;
       object-fit: cover;
+      box-shadow: 0 20px 25px -15px rgba(0, 0, 0, .3);
     }
 }
 

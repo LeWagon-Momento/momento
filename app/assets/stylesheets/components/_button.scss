@@ -51,3 +51,32 @@
   background-size: 100% 5px, auto;
   color: $main-color;
 }
+
+.button-small-post-new {
+  // Button for new photo in post new
+  // Diff: added border with 2px for it to be visible
+  // Changed height to 0 and width is longer
+  height: 0px ;
+  width: 110px;
+  padding: 4px 8px;
+  border-radius: 20px;
+  border: 1px solid $main-color;
+  font-family: $body-font ;
+  font-size: 14px;
+  font-color: $main-color;
+  color: $main-color;
+  display:table-cell;
+  // Yellow Transition
+  background-image: linear-gradient($yellow, $yellow);
+  background-size: 0 5px, auto;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  transition: all .2s ease-out;
+  text-align: center;
+  background-color: $white;
+}
+
+.button-small-post-new:hover {
+  background-size: 100% 5px, auto;
+  color: $main-color;
+}

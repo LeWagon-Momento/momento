@@ -10,8 +10,8 @@ const initTimeline = () => {
 
       if ($(window).width() < 768) {
 
-        if ($('.timeline-content').hasClass('js--fadeInLeft')) {
-          $('.timeline-content').removeClass('js--fadeInLeft').addClass('js--fadeInRight');
+        if ($('.timeline-content, .new-post-text').hasClass('js--fadeInLeft')) {
+          $('.timeline-content, .new-post-text').removeClass('js--fadeInLeft').addClass('js--fadeInRight');
         }
 
         sr.reveal('.js--fadeInRight', {

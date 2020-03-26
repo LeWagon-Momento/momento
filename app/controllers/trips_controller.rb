@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :show
+  # skip_before_action :authenticate_user!, only: :show
   before_action :trip_find, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -46,3 +46,4 @@ class TripsController < ApplicationController
     params.require(:trip).permit(:name, :description, :start_date, :end_date, :vanity_url)
   end
 end
+# // This

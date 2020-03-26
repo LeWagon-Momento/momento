@@ -47,29 +47,17 @@
 
       <div id="flip" class="text-center">Click to see trip details</div>
 
-      <div id="panel">
-       <div class="d-flex flex-column w-50">
-        <!-- This is the left items -->
-        <div class="d-flex justify-content-around info-card">
-          <!-- This is the trip name -->
-          <div class="info-header">
-            <%= @trip.name %>
-          </div>
-          <!-- This is the end button -->
-          <button type="button" class="btn btn-outline-success mt-2">
-            end trip
-          </button>
-        </div>
-          <!-- This is the cities tags -->
-          <div class="row row-cols-4 w-50 ml-0 mt-1">
-            <span class="info-tag col">China</span>
-            <div class="info-tag col">Singapore</div>
-            <div class="info-tag col">Singapore</div>
-            <div class="info-tag col">Singapore</div>
-            <div class="info-tag col">Singapore</div>
-            <div class="info-tag col">Sing apore</div>
-          </div>
-       </div>
+      <div id="panel"> <div class="d-flex flex-column w-50"> <!-- This is the
+      left items --> <div class="d-flex justify-content-around info-card"> <!--
+      This is the trip name --> <div class="info-header"> <%= @trip.name %>
+      </div> <!-- This is the end button --> <button type="button" class="btn
+      btn-outline-success mt-2"> end trip </button> </div> <!-- This is the
+      cities tags --> <div class="row row-cols-4 w-auto ml-0 mt-1"> <span
+      class="info-tag col">China</span> <div class="info-tag
+      col">Singapore</div> <div class="info-tag col">Singapore</div> <div
+      class="info-tag col">Singapore</div> <div class="info-tag
+      col">Singapore</div> <div class="info-tag col">Sing apore</div> </div>
+      </div>
 
       </div>
     </div>

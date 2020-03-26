@@ -11,7 +11,7 @@ $primary-text: #212121;
 $secondary-text: #757575;
 
 section {
-  padding: 100px 0;
+  padding: 25px 0 100px 0;
 }
 
 html, body {
@@ -220,7 +220,7 @@ blockquote {
 
     &::before {
       left: 50px;
-      top: 150px;
+      top: 81px;
     }
 
     .timeline-img {

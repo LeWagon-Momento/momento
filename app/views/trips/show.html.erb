@@ -35,7 +35,7 @@
       <div id="flip" class="text-center">Click to see trip details</div>
 
       <div id="panel">
-       <div class="d-inline-flex">
+       <div class="d-flex">
         <!-- This is the left items -->
         <div class="d-flex flex-column info-card">
           <!-- This is the trip name -->
@@ -43,8 +43,13 @@
             <%= @trip.name %>
           </div>
           <!-- This is the cities tags -->
-          <div>
-            <div class="badge badge-pill badge-light">Singapore</div>
+          <div class="row row-cols-4 w-50 ml-0 mt-1">
+            <span class="info-tag col">China</span>
+            <div class="info-tag col">Singapore</div>
+            <div class="info-tag col">Singapore</div>
+            <div class="info-tag col">Singapore</div>
+            <div class="info-tag col">Singapore</div>
+            <div class="info-tag col">Singapore</div>
           </div>
         </div>
         <!-- This is the end button -->

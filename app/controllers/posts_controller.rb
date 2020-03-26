@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  skip_before_action :authenticate_user!
   before_action :post_find, only: [:show, :edit, :update, :destroy]
 
   def index

@@ -4,34 +4,39 @@
     <title>Momento</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
+    <%= javascript_include_tag "application" %>
   </head>
 
   <body>
     <!-- Start of the navbar -->
       <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-        <a class="navbar-brand" href="">
-          <i class="fas fa-list-ul navbar-icon"></i>
+        <a class="navbar-brand-main" href="">
+          <img class="logo "src="https://res.cloudinary.com/dzmacq4yx/image/upload/v1585193799/logo_transparent_xb3nrn.png" alt="">
         </a>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-              <img class="avatar-bordered dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-            </li>
-          </ul>
-        </div>
+        <img class="avatar-bordered dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
       </div>
+
       <!-- End of the navbar -->
+<<<<<<< HEAD
 
     <div class="main-body">
+=======
+    <% unless @no_container %>
+      <div class="main-body">
+        <%= yield %>
+      </div>
+    <% else %>
+>>>>>>> c9fe3b9d166112c18c4d5581ad499c8d14def159
       <%= yield %>
-    </div>
-
+    <% end %>
 <!--      <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p> -->
-    <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
+     <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>
   </body>
 </html>

@@ -1,0 +1,48 @@
+<% @no_container = true %>
+
+
+<div class="container-review">
+
+  <div class= "title-review">
+    <%= @trip.name %>
+    <p><%= @trip.start_date.strftime("%B %Y") %></p>
+  </div>
+  <div>
+    <img class="img-background-review" src="https://images.unsplash.com/photo-1540439960520-cdf77dada88e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80" alt="">
+  </div>
+
+<!-- 1st Block -->
+
+  <div class="middle-card-review d-flex justify-content-between mt-4">
+<!--first post-->
+    <div class = "card-review draggable">
+      <img class="img-small-review" src="https://images.unsplash.com/photo-1552445093-6e48162efaea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt="">
+      <% @posts[0].name %>
+      <%= @posts[0].description %>
+    </div>
+
+
+<!-- Second post -->
+    <div class = "card-review">
+      <img class="img-small-review" src="https://images.unsplash.com/photo-1561775396-37b0892c6e9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80" alt="">
+      <% @posts[1].name %>
+      <%= @posts[1].description %>
+    </div>
+
+  </div>
+
+
+  <!-- Second block  -->
+    <div class = "card-review">
+      <img class="img-small-review" src="https://images.unsplash.com/photo-1561775396-37b0892c6e9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80" alt="">
+      <%= @posts[2].name %>
+      <%= @posts[2].description %>
+    </div>
+  </div>
+
+
+
+
+
+
+</div>

@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: :show
   before_action :trip_find, only: [:show, :edit, :update, :destroy]
 
   def index

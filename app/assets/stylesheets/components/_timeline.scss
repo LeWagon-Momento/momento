@@ -181,7 +181,7 @@ a {
   box-shadow: 0 1px 3px -1px rgba(0, 0, 0, .6);
 
   &:hover, &:active, &:focus {
-    background: darken($main-color, 10%);
+    // background: darken($main-color, 10%);
     color: $text;
     text-decoration: none;
   }

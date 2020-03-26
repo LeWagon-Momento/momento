@@ -1,46 +1,54 @@
 <div id="image-one-full">
-<img id="no-image" src="https://semantic-ui.com/images/wireframe/image.png" alt="" width="100%" >
+  <img id="no-image" src="https://semantic-ui.com/images/wireframe/image.png" alt="" width="100%" >
 </div>
 
-<div class="main-body">
 <%= simple_form_for [@trip, @post] do |f| %>
-<!-- Button to add photos -->
-  <label class="button-small-post-new">
-    <i class="fas fa-camera"></i> New photo
-    <span style="display:none;">
-      <%= f.input :photos, as: :file, input_html: { multiple: true, id: "display-image" } %>
-    </span>
-  </label>
-  <!-- Name input -->
-  <%= f.input :name, label: "Post Title", input_html: { placeholder: "Nice title here!" } %>
-  <!-- Address input -->
-  <%= f.input :address, input_html: { id: "search", placeholder: "Location" } %>
-  <!-- Button to search address for mapbox and wiki api -->
-  <%= button_tag(type: 'button', id: "wiki-button", class: "button-small") do %>
-    Search
-  <% end %>
-  <!-- Description input -->
-  <%= f.input :description, input_html: { id: "wiki-info", rows: 5 } %>
-  <!-- Checkbox as slider with flexbox for wiki info words on same line-->
-  <div class="d-flex align-items-center">
-    <div class="checkbox-switch">
-      <label class="switch">
-        <%= f.input_field :wiki, as: :boolean, class: "text-checkbox" %>
-        <span class="slider round"></span>
-      </label>
+  <!-- container to add spacing, can't do it outside -->
+  <div class="main-body">
+  <!-- Button to add photos -->
+    <label class="button-small-post-new">
+      <i class="fas fa-camera"></i> New photo
+      <span style="display:none;">
+        <%= f.input :photos, as: :file, input_html: { multiple: true, id: "display-image" } %>
+      </span>
+    </label>
+    <!-- Name input -->
+    <%= f.input :name, label: "New Post Title", input_html: { placeholder: "Nice title here!" } %>
+    <!-- Address input -->
+    <%= f.input :address, input_html: { id: "search", placeholder: "Location" } %>
+    <!-- Button to search address for mapbox and wiki api -->
+    <%= button_tag(type: 'button', id: "wiki-button", class: "button-small") do %>
+      Search
+    <% end %>
+    <!-- Description input -->
+    <%= f.input :description, input_html: { id: "wiki-info", rows: 5 } %>
+    <!-- Checkbox as slider with flexbox for wiki info words on same line-->
+    <div class="d-flex align-items-center">
+      <div class="checkbox-switch">
+        <label class="switch">
+          <%= f.input_field :wiki, as: :boolean, class: "text-checkbox" %>
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div>
+        <p class="edit-text-margin">Wiki info</p>
+      </div>
     </div>
-    <div>
-      <p class="edit-text-margin">Wiki info</p>
-    </div>
+    <!-- Date input -->
+    <%= f.input :date, as: :date %>
   </div>
-  <%= f.input :date, as: :date %>
-  <%= f.button :submit, class: "button-large" %>
+  <!-- Submit button fixed to bottom -->
+  <div class="submit-fixed-bottom pt-2 pb-2">
+    <%= f.button :submit, "UPLOAD", class: "button-large" %>
+  </div>
 <% end %>
-</div>
 
-<% @no_container = true %>
+<!-- Mapbox -->
 <div
   id="map-post"
   style="width: 100%;
-  height: 600px;"
+  height: 400px;"
 ></div>
+
+<div class="spacing"></div>
+<% @no_container = true %>

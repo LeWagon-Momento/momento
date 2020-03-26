@@ -3,44 +3,44 @@
 
 <div class="container-review">
 
+  <!-- Description of the trip and background picture-->
   <div class= "title-review">
     <%= @trip.name %>
-    <p><%= @trip.start_date.strftime("%B %Y") %></p>
-  </div>
-  <div>
-    <img class="img-background-review" src="https://images.unsplash.com/photo-1540439960520-cdf77dada88e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80" alt="">
+    <h4><%= @trip.start_date.strftime("%B %Y") %></h4>
+    <div>
+      <img class="img-background-review" src="https://images.unsplash.com/photo-1540439960520-cdf77dada88e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80" alt="">
+      <p><%=@trip.description %></p>
+    </div>
   </div>
 
-<!-- 1st Block -->
 
-  <div class="middle-card-review d-flex justify-content-between mt-4">
-<!--first post-->
-    <div class = "card-review draggable">
+  <!-- Block with one picture - no description -->
+
+  <div class = "no-description-card-review">
+    <img class="img-small-review" src="https://images.unsplash.com/photo-1552445093-6e48162efaea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt="">
+    <p><%= @posts[0].name %></p>
+  </div>
+
+<!-- Block with 2 pictures + description-->
+
+   <div class="middle-card-review d-flex justify-content-between mt-4">
+    <!--first post-->
+    <div class = "card-review">
       <img class="img-small-review" src="https://images.unsplash.com/photo-1552445093-6e48162efaea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt="">
-      <% @posts[0].name %>
+      <%= @posts[0].name %>
       <%= @posts[0].description %>
     </div>
 
 
-<!-- Second post -->
+    <!-- Second post -->
     <div class = "card-review">
       <img class="img-small-review" src="https://images.unsplash.com/photo-1561775396-37b0892c6e9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80" alt="">
-      <% @posts[1].name %>
+      <%= @posts[1].name %>
       <%= @posts[1].description %>
     </div>
-
   </div>
 
-
-  <!-- Second block  -->
-    <div class = "card-review">
-      <img class="img-small-review" src="https://images.unsplash.com/photo-1561775396-37b0892c6e9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80" alt="">
-      <%= @posts[2].name %>
-      <%= @posts[2].description %>
-    </div>
-  </div>
-
-
+<!-- End of the block with 2 pictures + description-->
 
 
 

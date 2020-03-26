@@ -7,16 +7,31 @@
 }
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+
 }
 .navbar{
   height: 60px;
   padding-left: 0px;
+  padding-top:0px;
+  padding-bottom: 0px;
 }
 .navbar-icon{
-  padding:20px;
+  padding:10px;
   background-color: $second-color;
   color: $light-color;
+  margin:0px;
 }
 .navbar-icon:hover{
   color:$yellow;
+}
+.navbar-brand-main{
+  padding:0px;
+  margin:0px;
+}
+.logo{
+  width:60px;
+  height:60px;
+}
+.logo img{
+  background-color:$main-color;
 }

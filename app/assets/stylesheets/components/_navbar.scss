@@ -35,3 +35,13 @@
 .logo img{
   background-color:$main-color;
 }
+
+// For Post#new to make the create post button at the bottom
+.submit-fixed-bottom {
+  background-color: #FFFFFF;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align:center;
+}

@@ -5,14 +5,16 @@ const wikiApi = () => {
       let searchValue = document.querySelector('#search')
       console.log(searchValue.value);
       const cityName = searchValue.value;
-      const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&titles=${cityName}&formatversion=2&exsentences=5&exlimit=1&explaintext=1`;
+      const placeNames = cityName.replace( " ", "%20" );
+      const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&list=search&srsearch=${placeNames}&formatversion=2&exsentences=5&exlimit=1&explaintext=1`;
       const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
       fetch(proxyUrl + url)
       .then(response => response.json())
       .then((data) => {
-        const retrievedInfo = data["query"]["pages"]["0"]["extract"]
+        const retrievedInfo = data["query"]["search"][0]["snippet"]
+        const refinedDescription = retrievedInfo.replace(/(<([^>]+)>)/ig, "" )
         const detail = document.querySelector('#wiki-info');
-        detail.placeholder = retrievedInfo;
+        detail.placeholder = refinedDescription;
       })
     });
   }

@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <script src="https://kit.fontawesome.com/710f69532c.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <%= javascript_include_tag "application" %>
@@ -14,8 +14,8 @@
   <body>
     <!-- Start of the navbar -->
       <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-        <a class="navbar-brand" href="">
-          <i class="fas fa-list-ul navbar-icon"></i>
+        <a class="navbar-brand-main" href="">
+          <img class="logo "src="https://res.cloudinary.com/dzmacq4yx/image/upload/v1585193799/logo_transparent_xb3nrn.png" alt="">
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
@@ -26,6 +26,7 @@
           </ul>
         </div>
       </div>
+
       <!-- End of the navbar -->
     <% unless @no_container %>
       <div class="main-body">

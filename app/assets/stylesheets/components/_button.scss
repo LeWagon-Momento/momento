@@ -16,6 +16,8 @@
   background-repeat: no-repeat;
   background-position: center bottom;
   transition: all .2s ease-out;
+  text-align: center;
+  background-color: $white;
 }
 
 .button-large{
@@ -31,11 +33,12 @@
   display:table-cell;
   // Yellow Transition
   background-image: linear-gradient($yellow, $yellow);
+  background-color: $white;
   background-size: 0 5px, auto;
   background-repeat: no-repeat;
   background-position: center bottom;
   transition: all .2s ease-out;
-
+  text-align: center;
 }
 
 // hoover

@@ -25,6 +25,7 @@ gem 'cloudinary', '~> 1.12.0'
 gem 'geocoder'
 gem 'pry'
 gem 'ngrok'
+gem 'jquery-rails'
 
 
 # Use CoffeeScript for .coffee assets and views

@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-  skip_before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: :show
   before_action :trip_find, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -28,6 +28,12 @@ class TripsController < ApplicationController
   end
 
   def destroy
+  end
+
+  # Review Trip method
+  def review
+    @trip = Trip.find(params[:trip_id])
+    @posts = Post.where(trip_id: params[:trip_id]).all
   end
 
   private

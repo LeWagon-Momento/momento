@@ -27,13 +27,15 @@
 .navbar-brand-main{
   padding:0px;
   margin:0px;
+  box-shadow:none;
 }
 .logo{
   width:60px;
   height:60px;
 }
 .logo img{
-  background-color:$main-color;
+  background-color:$second-color;
+  box-shadow: none;
 }
 
 // For Post#new to make the create post button at the bottom

@@ -17,20 +17,22 @@
 
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 import { initMapbox } from '../plugins/init_mapbox';
+import { initPostShowMapbox } from '../plugins/init_mapbox_postshow'; // Kenn's mapbox
 import { initTimeline } from '../plugins/init_timeline';
 import { initSlider } from '../plugins/init_slider';
-import { wikiApi } from '../plugins/wiki_api';
 import { textCheck } from '../plugins/wiki_api';
 import { readURL } from '../plugins/display_image';
 import { initPostMapbox } from '../plugins/post_mapbox';
 import { initReviewMapbox } from '../plugins/review_mapbox';
 import '../plugins/draggable.js'
+import { wikiApi } from '../plugins/wiki_api';
 
 initMapbox();
+initPostShowMapbox();
 initTimeline();
 initSlider();
-wikiApi();
 textCheck();
 readURL();
 initPostMapbox();
+wikiApi();
 initReviewMapbox();

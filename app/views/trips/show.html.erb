@@ -23,6 +23,7 @@
           <!-- This is the date box format -->
           <div class="timeline-date"><%= post.date.strftime("%d of %b") %></div>
         </div>
+        <div class="post-name js--fadeInRight"><%= post.name %></div>
       </div>
     <% end %>
 
@@ -50,15 +51,19 @@
         <!-- This is the trip name -->
         <div class="info-header"><%= @trip.name %></div>
          <!-- This is the end trip button -->
-        <%= link_to "End Trip", trip_trip_path(@trip) %>
+        <%= link_to "End Trip", trip_trip_path(@trip), class: "button-large info-button" %>
       </div>
 
+      <!-- This is the info description -->
+      <div class="info-description">
+        <%= @trip.description %>
+      </div>
       <!-- This is the cities tags -->
-      <div class="row row-cols-3 w-auto ml-4 mt-1">
+<!--       <div class="row row-cols-3 w-auto ml-4 mt-1">
         <span class="info-tag col">China</span>
         <div class="info-tag col">Singapore</div>
         <div class="info-tag col">Singapore</div>
-      </div>
+      </div> -->
 
     </div>
   </div>

@@ -8,7 +8,7 @@
     <%= @trip.name %>
     <h4><%= @trip.start_date.strftime("%B %Y") %></h4>
     <div>
-      <img class="img-background-review" src="https://images.unsplash.com/photo-1540439960520-cdf77dada88e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80" alt="">
+      <%= cl_image_tag @posts[0].photos[0].key , class: "img-background-review" %>
       <p><%=@trip.description %></p>
     </div>
   </div>
@@ -16,7 +16,7 @@
   <!-- Block with one picture - description -->
 
   <div class = "description-middle-card-review">
-    <%= cl_image_tag @posts[0].photos[0].key , class: "img-medium-review" %>
+    <%= cl_image_tag @posts[1].photos[0].key , class: "img-medium-review" %>
     <div class="text-middle-card-review">
       <p class="middle-card-name-review"><%= @posts[0].name %></p>
       <p class="middle-card-description-review"><%= @posts[0].description %></p>
@@ -27,12 +27,12 @@
    <div class="small-card-block-review d-flex justify-content-between mt-4">
     <!--number 1 -->
     <div class = "card-review">
-      <%= cl_image_tag @posts[0].photos[0].key , class: "img-small-review1" %>
+      <%= cl_image_tag @posts[2].photos[0].key , class: "img-small-review1" %>
     </div>
 
     <!-- number 2 -->
     <div class = "card-review">
-      <%= cl_image_tag @posts[0].photos[0].key , class: "img-small-review2" %>
+      <%= cl_image_tag @posts[3].photos[0].key , class: "img-small-review2" %>
     </div>
   </div>
 
@@ -41,16 +41,15 @@
  <div class="small-card-block-review d-flex justify-content-between mt-4">
     <!--number 3 -->
     <div class = "card-review">
-      <%= cl_image_tag @posts[0].photos[0].key , class: "img-small-review3" %>
+      <%= cl_image_tag @posts[4].photos[0].key , class: "img-small-review3" %>
     </div>
 
     <!--number 4 -->
     <div class = "card-review">
-      <%= cl_image_tag @posts[0].photos[0].key , class: "img-small-review4" %>
+      <%= cl_image_tag @posts[5].photos[0].key , class: "img-small-review4" %>
     </div>
   </div>
 <!-- @trip_review_url is defined in controller -->
-<a href="https://wa.me/?text=<%= @trip_review_url %>">Share via Whatsapp</a>
 
   <div class="mapbox-box">
     <div
@@ -63,7 +62,7 @@
   </div>
 
   <div class = "end-card-review">
-    <%= cl_image_tag @posts[0].photos[0].key , class: "img-end-review" %>
+    <%= cl_image_tag @posts[6].photos[0].key , class: "img-end-review" %>
     <div class="text-middle-card-review">
     </div>
   </div>
@@ -71,5 +70,10 @@
   <div class= "title-review">
     The end
   <div>
+
+  <div class="wa-review">
+    <a href="https://wa.me/?text=<%= @trip_review_url %>">Share via Whatsapp</a>
+  </div>
+
 </div>
 

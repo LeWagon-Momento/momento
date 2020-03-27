@@ -34,8 +34,15 @@ class TripsController < ApplicationController
   # Review Trip method
   def review
     @trip = Trip.find(params[:trip_id])
-    @posts = Post.where(trip_id: params[:trip_id]).all
     @trip_review_url = "https://sharing-the-momento.herokuapp.com/trips/#{@trip.id}/review"
+
+    @posts = @trip.posts
+    @markers = @posts.map do |post|
+      {
+        lat: post.latitude,
+        lng: post.longitude
+      }
+    end
   end
 
   private

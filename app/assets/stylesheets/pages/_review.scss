@@ -106,12 +106,20 @@
   object-fit: cover;
   border: 5px solid $second-color;
 }
-
+.img-end-review{
+  width:100%;
+  height:100px;
+  object-fit: cover;
+  background-position:center;
+}
 
 // Card review
 .card-review{
   width:48%;
   height:200px;
+}
+.end-card-review{
+  margin-top: 30px;
 }
 .description-middle-card-review{
   margin-bottom: 20px;
@@ -124,4 +132,8 @@
 }
 .small-card-block-review{
   justify-content:space-between;
+}
+
+.mapbox-box{
+  margin-top: 20px;
 }

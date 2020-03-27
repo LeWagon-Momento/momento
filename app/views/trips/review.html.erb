@@ -13,51 +13,63 @@
     </div>
   </div>
 
-
   <!-- Block with one picture - description -->
 
   <div class = "description-middle-card-review">
-    <img class="img-medium-review" src="https://images.unsplash.com/photo-1561775396-37b0892c6e9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=666&q=80" alt="">
+    <%= cl_image_tag @posts[0].photos[0].key , class: "img-medium-review" %>
     <div class="text-middle-card-review">
       <p class="middle-card-name-review"><%= @posts[0].name %></p>
       <p class="middle-card-description-review"><%= @posts[0].description %></p>
     </div>
   </div>
 
-<!-- Block with 2 pictures + description-->
-
+<!-- first block -->
    <div class="small-card-block-review d-flex justify-content-between mt-4">
-    <!--first post-->
+    <!--number 1 -->
     <div class = "card-review">
-      <img class="img-small-review1" src="https://images.unsplash.com/photo-1557024951-5ea6065f494c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="">
+      <%= cl_image_tag @posts[0].photos[0].key , class: "img-small-review1" %>
     </div>
 
-
-    <!-- Second post -->
+    <!-- number 2 -->
     <div class = "card-review">
-      <img class="img-small-review2" src="https://images.unsplash.com/photo-1567848191032-b2ba4a58b115?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=882&q=80" alt="">
+      <%= cl_image_tag @posts[0].photos[0].key , class: "img-small-review2" %>
     </div>
   </div>
 
-<!-- End of the block with 2 pictures + description-->
 
+<!-- |Second block -->
  <div class="small-card-block-review d-flex justify-content-between mt-4">
-    <!--first post-->
+    <!--number 3 -->
     <div class = "card-review">
-      <img class="img-small-review3" src="https://images.unsplash.com/photo-1552445093-6e48162efaea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80" alt="">
+      <%= cl_image_tag @posts[0].photos[0].key , class: "img-small-review3" %>
     </div>
 
-
-    <!-- Second post -->
+    <!--number 4 -->
     <div class = "card-review">
-      <img class="img-small-review4" src="https://images.unsplash.com/photo-1561775330-4d22fde8aeed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1825&q=80" alt="">
+      <%= cl_image_tag @posts[0].photos[0].key , class: "img-small-review4" %>
     </div>
   </div>
 <!-- @trip_review_url is defined in controller -->
 <a href="https://wa.me/?text=<%= @trip_review_url %>">Share via Whatsapp</a>
 
-<a href="https://wa.me/?text=http://7051367b.ngrok.io/trips/2/review">Share via Whatsapp test</a>
+  <div class="mapbox-box">
+    <div
+      id="map-review"
+      style="width: 100%;
+      height: 200px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    >
+  </div>
 
-<!-- <a href="whatsapp://send?text=www.google.com" data-action="share/whatsapp/share">Share via Whatsapp</a>
- -->
+  <div class = "end-card-review">
+    <%= cl_image_tag @posts[0].photos[0].key , class: "img-end-review" %>
+    <div class="text-middle-card-review">
+    </div>
+  </div>
+
+  <div class= "title-review">
+    The end
+  <div>
 </div>
+

@@ -23,6 +23,7 @@ import { wikiApi } from '../plugins/wiki_api';
 import { textCheck } from '../plugins/wiki_api';
 import { readURL } from '../plugins/display_image';
 import { initPostMapbox } from '../plugins/post_mapbox';
+import { initReviewMapbox } from '../plugins/review_mapbox';
 import '../plugins/draggable.js'
 
 initMapbox();
@@ -32,4 +33,4 @@ wikiApi();
 textCheck();
 readURL();
 initPostMapbox();
-
+initReviewMapbox();

@@ -34,6 +34,8 @@ class TripsController < ApplicationController
   # Review Trip method
   def review
     @trip = Trip.find(params[:trip_id])
+    @trip_review_url = "https://sharing-the-momento.herokuapp.com/trips/#{@trip.id}/review"
+
     @posts = @trip.posts
     @markers = @posts.map do |post|
       {

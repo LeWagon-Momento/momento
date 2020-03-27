@@ -49,6 +49,8 @@
       <%= cl_image_tag @posts[0].photos[0].key , class: "img-small-review4" %>
     </div>
   </div>
+<!-- @trip_review_url is defined in controller -->
+<a href="https://wa.me/?text=<%= @trip_review_url %>">Share via Whatsapp</a>
 
   <div class="mapbox-box">
     <div
@@ -69,6 +71,5 @@
   <div class= "title-review">
     The end
   <div>
-
 </div>
 

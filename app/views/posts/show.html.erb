@@ -1,15 +1,34 @@
-<!-- Mapbox to display all posts markers -->
+<div id="image-one-full">
+  <%= cl_image_tag @post.photos[0].key, class: "post-image" %>
+  <!-- <img id="no-image" src="https://semantic-ui.com/images/wireframe/image.png" alt="" width="100%" > -->
+</div>
+
+<%= simple_form_for [@trip, @post] do |f| %>
+  <!-- container to add spacing, can't do it outside -->
+  <div class="main-body">
+
+    <!-- Name input -->
+    <%= f.input :name, label: "Post Title", disabled: true, input_html: { placeholder: "Nice title here!" } %>
+    <!-- Address input -->
+    <%= f.input :address, disabled: true, input_html: { id: "search", placeholder: "Location" } %>
+
+    <!-- Description input -->
+    <%= f.input :description, disabled: true, input_html: { id: "wiki-info", rows: 5 } %>
+    <!-- Checkbox as slider with flexbox for wiki info words on same line-->
+
+    <!-- Date input -->
+    <%= f.input :date, as: :date, disabled: true %>
+  </div>
+
+<% end %>
+
+<!-- Mapbox -->
 <div
-  id="map"
+  id="map1"
   style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
+  height: 400px;"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
 
-
-<% if user_signed_in? %>
-  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to "Sign In", new_user_session_path %>
-<% end %>
+<div class="spacing"></div>
+<% @no_container = true %>

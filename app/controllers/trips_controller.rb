@@ -35,6 +35,7 @@ class TripsController < ApplicationController
   def review
     @trip = Trip.find(params[:trip_id])
     @posts = Post.where(trip_id: params[:trip_id]).all
+    @trip_review_url = "https://sharing-the-momento.herokuapp.com/trips/#{@trip.id}/review"
   end
 
   private

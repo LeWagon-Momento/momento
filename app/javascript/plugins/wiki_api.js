@@ -23,17 +23,19 @@ const wikiApi = () => {
 const textCheck = () => {
   console.log('here');
   const search = document.querySelector(".text-checkbox");
-  search.addEventListener('change', (event) => {
-    if(search.checked) {
-      let text = document.querySelector('#wiki-info');
-      // console.log(text)
-      text.value = text.placeholder;
-    } else {
-      let text = document.querySelector('#wiki-info');
-      // console.log(text)
-      text.value = null;
-    }
-  });
+  if (search) {
+    search.addEventListener('change', (event) => {
+      if(search.checked) {
+        let text = document.querySelector('#wiki-info');
+        // console.log(text)
+        text.value = text.placeholder;
+      } else {
+        let text = document.querySelector('#wiki-info');
+        // console.log(text)
+        text.value = null;
+      }
+    });
+  }
 }
 
 export { wikiApi, textCheck };

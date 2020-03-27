@@ -26,17 +26,19 @@ const toBase64 = file => new Promise((resolve, reject) => {
 // adds image to div in new post form
 const readURL = () => {
   const imageFile = document.getElementById('display-image')
-  imageFile.addEventListener('change', (event) => {
-    async function Main () {
-      const targetFile = document.getElementById('display-image').files[0];
-      const baseString = await toBase64(targetFile);
-      console.log(baseString);
-      const divImage = document.getElementById('image-one-full');
-      divImage.insertAdjacentHTML('afterbegin', `<img src="${baseString}" alt="your image" width="100%" />`);
-      document.getElementById("no-image").remove();
-    }
-    Main()
-  })
+  if (imageFile) {
+    imageFile.addEventListener('change', (event) => {
+      async function Main () {
+        const targetFile = document.getElementById('display-image').files[0];
+        const baseString = await toBase64(targetFile);
+        console.log(baseString);
+        const divImage = document.getElementById('image-one-full');
+        divImage.insertAdjacentHTML('afterbegin', `<img src="${baseString}" alt="your image" width="100%" />`);
+        document.getElementById("no-image").remove();
+      }
+      Main()
+    })
+  }
 }
 
 

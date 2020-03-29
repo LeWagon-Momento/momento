@@ -14,8 +14,10 @@
 <!-- This is to iterate the posts in the trip -->
 
     <% @trip.posts.each do |post| %>
+
       <div class="timeline-item">
         <!-- This is the circle on the line -->
+    <%= link_to trip_post_path(@trip, post) do  %>
         <div class="timeline-img"></div>
         <div class="timeline-content timeline-card js--fadeInRight">
           <!-- This is the picture class -->
@@ -25,6 +27,7 @@
         </div>
         <div class="post-name js--fadeInRight"><%= post.name %></div>
       </div>
+    <% end %>
     <% end %>
 
     <div class="timeline-item">

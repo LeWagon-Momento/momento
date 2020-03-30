@@ -26,6 +26,8 @@ import { initPostMapbox } from '../plugins/post_mapbox';
 import { initReviewMapbox } from '../plugins/review_mapbox';
 import '../plugins/draggable.js'
 import { wikiApi } from '../plugins/wiki_api';
+import { loginModal } from '../plugins/init_login_modal';
+
 
 initMapbox();
 initPostShowMapbox();
@@ -36,3 +38,4 @@ readURL();
 initPostMapbox();
 wikiApi();
 initReviewMapbox();
+loginModal();

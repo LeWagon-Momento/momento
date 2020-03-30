@@ -23,6 +23,7 @@
 
   <body>
     <!-- Start of the navbar -->
+    <% unless @no_navbar %>
       <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
         <a class="navbar-brand-main" href="">
           <img class="logo "src="https://res.cloudinary.com/dzmacq4yx/image/upload/v1585193799/logo_transparent_xb3nrn.png" alt="">
@@ -30,7 +31,7 @@
           <!-- Need to add USER PICTURE HERE -->
           <img class="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
       </div>
-
+    <% end %>
       <!-- End of the navbar -->
 
 

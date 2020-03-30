@@ -3,32 +3,21 @@
   <!-- <img id="no-image" src="https://semantic-ui.com/images/wireframe/image.png" alt="" width="100%" > -->
 </div>
 
-<%= simple_form_for [@trip, @post] do |f| %>
-  <!-- container to add spacing, can't do it outside -->
-  <div class="main-body">
-
-    <!-- Name input -->
-    <%= f.input :name, label: "Post Title", disabled: true, input_html: { placeholder: "Nice title here!" } %>
-    <!-- Address input -->
-    <%= f.input :address, disabled: true, input_html: { id: "search", placeholder: "Location" } %>
-
-    <!-- Description input -->
-    <%= f.input :description, disabled: true, input_html: { id: "wiki-info", rows: 5 } %>
-    <!-- Checkbox as slider with flexbox for wiki info words on same line-->
-
-    <!-- Date input -->
-    <%= f.input :date, as: :date, disabled: true %>
-  </div>
-
-<% end %>
+<div class="main-body">
+  <h1><%= @post.name %></h1>
+  <h3 class="mt-4"><strong>Date: </strong><%= @post.date.to_formatted_s(:long_ordinal) %></h3>
+  <h4 class="mt-4"><strong>Address: </strong><%= @post.address %></h4>
+  <h5 class="mt-4"><strong>Description</strong></h5>
+  <p><%= @post.description %></p>
+</div>
 
 <!-- Mapbox -->
 <div
   id="map1"
   style="width: 100%;
   height: 400px;"
+  data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
 
-<div class="spacing"></div>
 <% @no_container = true %>

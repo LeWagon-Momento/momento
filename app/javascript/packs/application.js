@@ -26,7 +26,11 @@ import { initPostMapbox } from '../plugins/post_mapbox';
 import { initReviewMapbox } from '../plugins/review_mapbox';
 import '../plugins/draggable.js'
 import { wikiApi } from '../plugins/wiki_api';
+import { toggleNav } from '../plugins/side_bar';
+import { closeNav } from '../plugins/side_bar';
 
+toggleNav();
+closeNav();
 initMapbox();
 initPostShowMapbox();
 initTimeline();

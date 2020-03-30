@@ -24,24 +24,31 @@
   <body>
     <!-- Start of the navbar -->
       <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-        <a class="navbar-brand-main" href="">
-          <img class="logo "src="https://res.cloudinary.com/dzmacq4yx/image/upload/v1585193799/logo_transparent_xb3nrn.png" alt="">
-        </a>
+          <span class="open-side-bar fas fa-globe-americas"></span>
           <!-- Need to add USER PICTURE HERE -->
           <img class="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
       </div>
+    <!-- End of the navbar -->
 
-      <!-- End of the navbar -->
+    <div id="mySidenav" class="sidenav">
+      <span class="closebtn"> Momento <i class="fas fa-globe-americas"></i> </span>
+      <a href="#">Home</a>
+      <a href="#">Profile</a>
+      <a href="#">Current Trip</a>
+      <a href="#">Past Trips</a>
+      <a href="#">Log out</a>
+    </div>
 
 
-
-    <% unless @no_container %>
-      <div class="main-body">
-        <%= yield %>
-      </div>
-    <% else %>
-      <%= yield %>
-    <% end %>
+    <div class="navbar-push">
+      <% unless @no_container %>
+        <div class="main-body">
+          <%= yield %>
+        </div>
+        <% else %>
+          <%= yield %>
+        <% end %>
+    </div>
 <!--      <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p> -->
      <!-- from app/assets/javascripts/application.js -->

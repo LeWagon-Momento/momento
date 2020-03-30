@@ -1,6 +1,23 @@
-<h1>This is the index page</h1>
+<div class="text-center mt-3">
+<h1><em>View your past moments!</em></h1>
+</div>
 
-<div class="btn button-large draggable"> Hello </div>
 
-<div class="btn button-small">Click</div>
+<% @trips.each do |trip| %>
+  <%= link_to trip_path(trip) do %>
+    <div class="card-trip" >
+      <img class="card-img" src="https://source.unsplash.com/random" alt="No image found">
+      <div class="card-body">
+        <h3><%= trip.name %></h3>
+        <p><%= trip.start_date.strftime('%d %B %Y') %> - <%= trip.end_date.strftime('%d %B %Y') %></p>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+
+<% @no_container = true %>
+<!-- <div class="btn button-large draggable"> Hello </div>
+
+<div class="btn button-small">Click</div> -->
 

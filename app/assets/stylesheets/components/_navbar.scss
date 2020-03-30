@@ -15,13 +15,12 @@
   padding-top:0px;
   padding-bottom: 0px;
 }
-.navbar-icon{
-  padding:10px;
-  background-color: $second-color;
+.open-side-bar{
   color: $light-color;
-  margin:0px;
+  margin:10px;
+  font-size: 34px;
 }
-.navbar-icon:hover{
+.open-side-bar:hover{
   color:$yellow;
 }
 .navbar-brand-main{
@@ -29,14 +28,7 @@
   margin:0px;
   box-shadow:none;
 }
-.logo{
-  width:60px;
-  height:60px;
-}
-.logo img{
-  background-color:$second-color;
-  box-shadow: none;
-}
+
 
 // For Post#new to make the create post button at the bottom
 .submit-fixed-bottom {
@@ -51,5 +43,52 @@
 .sticky-submit-button {
   z-index: 3;
   height: 50px;
+}
+
+
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 10px;
+  color: #white;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 20px;
+  margin:10px auto;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 

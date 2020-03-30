@@ -23,6 +23,7 @@
 
   <body>
     <!-- Start of the navbar -->
+    <% unless @no_navbar %>
       <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
           <span class="open-side-bar fas fa-globe-americas"></span>
           <!-- Need to add USER PICTURE HERE -->
@@ -38,6 +39,9 @@
       <a href="#">Past Trips</a>
       <a href="#">Log out</a>
     </div>
+
+    <% end %>
+      <!-- End of the navbar -->
 
 
     <div class="navbar-push">

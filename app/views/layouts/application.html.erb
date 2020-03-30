@@ -24,7 +24,7 @@
   <body>
     <!-- Start of the navbar -->
     <% unless @no_navbar %>
-      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon nav-bar-here">
           <span class="open-side-bar fas fa-globe-americas"></span>
           <!-- Need to add USER PICTURE HERE -->
           <img class="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
@@ -33,11 +33,17 @@
 
     <div id="mySidenav" class="sidenav">
       <span class="closebtn"> Momento <i class="fas fa-globe-americas"></i> </span>
-      <a href="#">Home</a>
-      <a href="#">Profile</a>
+      <%= link_to trips_path do %>
+        Home
+      <% end %>
+      <%= link_to new_user_session_path(current_user) do %>
+        Profile
+      <% end %>
       <a href="#">Current Trip</a>
       <a href="#">Past Trips</a>
-      <a href="#">Log out</a>
+      <%= link_to new_user_session_path do %>
+        Log out
+      <% end %>
     </div>
 
     <% end %>

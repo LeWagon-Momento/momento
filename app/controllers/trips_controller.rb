@@ -3,7 +3,13 @@ class TripsController < ApplicationController
   before_action :trip_find, only: [:show, :edit, :update, :destroy]
 
   def index
-    @trips = Trip.all
+    @trips = []
+    Trip.all.each do |trip|
+      unless trip.end_date.nil?
+        @trips << trip
+      end
+    end
+    @trips
   end
 
   def show

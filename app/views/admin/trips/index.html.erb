@@ -1,0 +1,19 @@
+<h1>ALL TRIPS</h1>
+<br>
+<% @trips.each do |trip| %>
+  <h1> <%= trip.name  %> </h1>
+  <h1><%= trip.description %></h1>
+  <h2>START:<%= trip.start_date %></h2>
+  <h2>END:<%= trip.end_date %></h2>
+<% end %>
+
+<br>
+
+<% @users.each do |user| %> <!-- pull out from profile pic for host country -->
+ <h1> <%= user.name %> </h1>
+ <h2><%= user.email %></h2>
+ <h2><%= user.country.name %></h2>
+<%  end %>
+
+
+

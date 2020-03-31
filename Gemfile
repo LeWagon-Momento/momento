@@ -26,6 +26,7 @@ gem 'geocoder'
 gem 'pry'
 gem 'ngrok'
 gem 'jquery-rails'
+gem 'non-stupid-digest-assets'
 
 
 # Use CoffeeScript for .coffee assets and views

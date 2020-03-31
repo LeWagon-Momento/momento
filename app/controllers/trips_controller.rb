@@ -17,7 +17,7 @@ class TripsController < ApplicationController
     users_active_trips = current_user.trips.where(end_date: nil)
 
     if current_location.city != current_user.city.name && users_active_trips.count > 0
-      redirect_to new_trip_path
+      redirect_to new_trip_path, :notice => "You are now in #{current_location.city} and you do not have any active trips. Starting a new trip..."
     end
   end
 

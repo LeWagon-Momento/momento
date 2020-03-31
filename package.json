@@ -9,7 +9,8 @@
     "jquery": "^3.4.1",
     "mapbox-gl": "^1.9.0",
     "popper.js": "^1.16.1",
-    "scrollreveal": "^4.0.6"
+    "scrollreveal": "^4.0.6",
+    "sweetalert2": "^9.10.7"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.10.3"

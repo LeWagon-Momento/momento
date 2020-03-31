@@ -9,6 +9,23 @@ class Admin::TripsController < ApplicationController
   end
 
   def edit
-
+    @trip = Trip.find(params[:id])
   end
+
+  # def update # if i have an edit does that mean i need an update
+  # end
+
+  def destroy
+    @trip = Trip.find(params[:id])
+    @trip.destroy
+    redirect_to admin_trips_path
+  end
+
+  # def update
+  #   if @trip.update(trip_params)
+  #     redirect_to admin_trips_path(@trip)
+  #   else
+  #     render :edit
+  # end
 end
+

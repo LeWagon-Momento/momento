@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     resources :posts
   end
   namespace :admin do
-    resources :trips, only: [:index, :edit]
+    resources :trips, only: [:index, :edit, :update, :destroy]
+    # delete "trips/:id", to: "trips#destroy"
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

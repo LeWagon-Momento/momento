@@ -12,11 +12,13 @@ class TripsController < ApplicationController
     @trips
 
     # checking user's location
-    current_location = request.location
+    @current_location = request.location
     # user's array of active trips
     users_active_trips = current_user.trips.where(end_date: nil)
-    if current_location.city != current_user.city.name && users_active_trips.count > 0
-      redirect_to new_trip_path
+    if @current_location.city != current_user.city.name && users_active_trips.count > 0
+      respond_to do |format|
+        format.html
+      end
     end
   end
 

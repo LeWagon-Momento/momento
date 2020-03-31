@@ -49,6 +49,66 @@ first_trip = Trip.new(name: "Cambobia",
 first_trip.user = max
 first_trip.save
 
+#Creating first Trip
+
+first_trip = Trip.new(name: "Cambobia",
+                          description: "Siem Reap, Temple with Franck and Olivia",
+                          start_date: "2 november 2018",
+                          end_date: "10 november 2018",
+                          )
+
+
+first_trip.user = max
+first_trip.save
+
+#Creating first Trip
+
+first_trip = Trip.new(name: "Cambobia",
+                          description: "Siem Reap, Temple with Franck and Olivia",
+                          start_date: "2 november 2018",
+                          end_date: "10 november 2018",
+                          )
+
+
+first_trip.user = max
+first_trip.save
+
+#Creating first Trip
+
+first_trip = Trip.new(name: "Cambobia",
+                          description: "Siem Reap, Temple with Franck and Olivia",
+                          start_date: "2 november 2018",
+                          end_date: "10 november 2018",
+                          )
+
+
+first_trip.user = max
+first_trip.save
+
+#Creating first Trip
+
+first_trip = Trip.new(name: "Cambobia",
+                          description: "Siem Reap, Temple with Franck and Olivia",
+                          start_date: "2 november 2018",
+                          end_date: "10 november 2018",
+                          )
+
+
+first_trip.user = max
+first_trip.save
+
+#Creating first Trip
+
+first_trip = Trip.new(name: "Cambobia",
+                          description: "Siem Reap, Temple with Franck and Olivia",
+                          start_date: "2 november 2018",
+                          end_date: "10 november 2018",
+                          )
+
+
+first_trip.user = max
+first_trip.save
+
 # Post Creation
 
 first_post = Post.new(name: "Temple on the first day",

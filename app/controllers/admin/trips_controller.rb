@@ -12,20 +12,22 @@ class Admin::TripsController < ApplicationController
     @trip = Trip.find(params[:id])
   end
 
-  # def update # if i have an edit does that mean i need an update
-  # end
-
   def destroy
     @trip = Trip.find(params[:id])
     @trip.destroy
     redirect_to admin_trips_path
   end
 
-  # def update
-  #   if @trip.update(trip_params)
-  #     redirect_to admin_trips_path(@trip)
-  #   else
-  #     render :edit
-  # end
+  def update
+    @trip = Trip.find(params[:id])
+    @trip.update(trip_params)
+    redirect_to admin_trips_path
+  end
+
+  private # why do i need to implement private for?
+
+  def trip_params
+    params.require(:trip).permit(:name, :description, :start_date, :end_date) # white list happnes here
+  end
 end
 

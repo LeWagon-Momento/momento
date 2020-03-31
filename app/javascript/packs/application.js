@@ -31,7 +31,6 @@ import { closeNav } from '../plugins/side_bar';
 
 import { loginModal } from '../plugins/init_login_modal';
 
-
 toggleNav();
 closeNav();
 initMapbox();

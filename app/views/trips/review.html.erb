@@ -8,72 +8,137 @@
     <%= @trip.name %>
     <h4><%= @trip.start_date.strftime("%B %Y") %></h4>
     <div>
-      <%= cl_image_tag @posts[0].photos[0].key , class: "img-background-review" %>
+      <%= cl_image_tag @posts.first.photos[0].key , class: "img-background-review" %>
       <p><%=@trip.description %></p>
     </div>
   </div>
 
+<!--  IF less than 6 pictures -> display a classic carousel -->
+  <% if @post_counter < 6 %>
+    <div class="carousel-review">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+      <ol class="carousel-indicators">
+        <% @posts.each_with_index do |slide, i| %>
+          <li data-target="#myCarousel" data-slide-to="#{i)" class="<%= 'active' if i == 0 %>"></li>
+        <% end %>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <% @posts.each_with_index do |slide, i| %>
+          <div class="carousel-item <%= 'active' if i == 0 %>">
+            <%= cl_image_tag slide.photos[0].key , class: 'img-medium-review' %>
+          </div>
+        <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only"></span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only"></span>
+      </a>
+    </div>
+  </div>
+
+
+<!-- if more than 6 pcitures  -->
+  <% else %>
+
   <!-- Block with one picture - description -->
 
-  <div class = "description-middle-card-review">
-    <%= cl_image_tag @posts[1].photos[0].key , class: "img-medium-review" %>
-    <div class="text-middle-card-review">
-      <p class="middle-card-name-review"><%= @posts[0].name %></p>
-      <p class="middle-card-description-review"><%= @posts[0].description %></p>
-    </div>
-  </div>
-
-<!-- first block -->
-   <div class="small-card-block-review d-flex justify-content-between mt-4">
-    <!--number 1 -->
-    <div class = "card-review">
-      <%= cl_image_tag @posts[2].photos[0].key , class: "img-small-review1" %>
+    <div class = "description-middle-card-review">
+      <%= cl_image_tag @posts[1].photos[0].key , class: "img-medium-review" %>
+      <div class="text-middle-card-review">
+        <p class="middle-card-name-review"><%= @posts[0].name %></p>
+        <p class="middle-card-description-review"><%= @posts[0].description %></p>
+      </div>
     </div>
 
-    <!-- number 2 -->
-    <div class = "card-review">
-      <%= cl_image_tag @posts[3].photos[0].key , class: "img-small-review2" %>
+    <!-- first block -->
+    <div class="small-card-block-review d-flex justify-content-between mt-4">
+      <!--number 1 -->
+      <div class = "card-review">
+        <%= cl_image_tag @posts[2].photos[0].key , class: "img-small-review1" %>
+      </div>
+
+      <!-- number 2 -->
+      <div class = "card-review">
+        <%= cl_image_tag @posts[3].photos[0].key , class: "img-small-review2" %>
+      </div>
     </div>
-  </div>
 
 
-<!-- |Second block -->
- <div class="small-card-block-review d-flex justify-content-between mt-4">
-    <!--number 3 -->
-    <div class = "card-review">
-      <%= cl_image_tag @posts[4].photos[0].key , class: "img-small-review3" %>
+    <!-- |Second block -->
+    <div class="small-card-block-review d-flex justsify-content-between mt-4">
+      <!--number 3 -->
+      <div class = "card-review">
+        <%= cl_image_tag @posts[4].photos[0].key , class: "img-small-review3" %>
+      </div>
+
+      <!--number 4 -->
+      <div class = "card-review">
+        <%= cl_image_tag @posts[5].photos[0].key , class: "img-small-review4" %>
+      </div>
     </div>
+    <!-- @trip_review_url is defined in controller -->
 
-    <!--number 4 -->
-    <div class = "card-review">
-      <%= cl_image_tag @posts[5].photos[0].key , class: "img-small-review4" %>
-    </div>
-  </div>
-<!-- @trip_review_url is defined in controller -->
 
-  <div class="mapbox-box">
-    <div
+    <!-- Map box  -->
+    <div class="mapbox-box">
+      <div
       id="map-review"
       style="width: 100%;
       height: 200px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    >
-  </div>
-
-  <div class = "end-card-review">
-    <%= cl_image_tag @posts[6].photos[0].key , class: "img-end-review" %>
-    <div class="text-middle-card-review">
+      >
     </div>
-  </div>
 
-  <div class= "title-review">
-    The end
-  <div>
+    <!--  Carousel  -->
+    <div class="carousel-review">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+        <ol class="carousel-indicators">
+          <% @posts.each_with_index do |slide, i| %>
+            <li data-target="#myCarousel" data-slide-to="#{i)" class="<%= 'active' if i == 0 %>"></li>
+          <% end %>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <% @posts.each_with_index do |slide, i| %>
+            <div class="carousel-item <%= 'active' if i == 0 %>">
+              <%= cl_image_tag slide.photos[0].key , class: 'img-medium-review' %>
+            </div>
+          <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+      </div>
+    </div>
 
-  <div class="wa-review">
-    <a href="https://wa.me/?text=<%= @trip_review_url %>">Share via Whatsapp</a>
-  </div>
+
+    <div class = "end-card-review">
+      <%= cl_image_tag @posts.last.photos[0].key , class: "img-end-review" %>
+      <div class="text-middle-card-review">
+      </div>
+    </div>
+
+    <div class= "title-review">
+      The end
+      </div>
+
+  <% end %>
+      <div class="wa-review">
+        <a href="https://wa.me/?text=<%= @trip_review_url %>">Share via Whatsapp</a>
+      </div>
 
 </div>
+
+
 

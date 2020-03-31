@@ -55,6 +55,8 @@ class TripsController < ApplicationController
     @trip_review_url = "https://sharing-the-momento.herokuapp.com/trips/#{@trip.id}/review"
 
     @posts = @trip.posts
+    @post_counter = @posts.count
+
     @markers = @posts.map do |post|
       {
         lat: post.latitude,

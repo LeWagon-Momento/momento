@@ -136,9 +136,15 @@
 
 .mapbox-box{
   margin-top: 20px;
+  margin-bottom: 20px;
 }
-
+.carousel-review{
+  margin-top: 20px;
+}
 .wa-review{
   margin:10px;
   font-family: $body-font;
+}
+.carousel-indicators{
+  color: $main-color;
 }

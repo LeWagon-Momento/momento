@@ -1,66 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>Oops! Error</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    .header-phrase {
+      position: absolute;
+      text-align: center;
+      top: 35%;
+      text-shadow: 0px 0px 4px rgba(0,0,0,0.3);
+    }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    .header-phrase h1 {
+      color: #FFFFFF;
+      font-size: 40px;
+      padding: 0px 24px;
+    }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    // for logo
+    .logo-position {
+      position: absolute;
+      top: 5%;
+    }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .full-screen-image {
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      border-radius: 5px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      position: relative;
+    }
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>We're sorry, but something went wrong.</h1>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
+<body>
+  <!-- This file lives in public/404.html -->
+<div class="full-screen-image" style="background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url(https://s3-alpha-sig.figma.com/img/2516/afa8/ca8cdaaacc91ec920f79a985ca27ef62?Expires=1586736000&Signature=GIxg88~EsnzfRQ0ZWALEGs06xTYlD6im95O2bANi3Wun2NuGjdUEmJNp-jtG4-ihAPNuOOyV9xKl~2vwGwd3TmOER24E0y648AXorqE4Z~3KcXuH9KlkulxROd9UOdMTqH~79lqffl5T9e4o3ZpfN5SrG6mJCJxyrC8Kx1LHKteeTWlwixKhCIQUGPSPT9tuzX21RbWARFwI8sbl-cWRMthb379YxvFPYEwf7jG2ROW6NLB6QQ94p8y1QfX0mAMwoB7twdPrlpg4TGXNBFCeW1wr8OkqzbNxAKkc0KyZ0nEmTKRAk0K-DWyD7dwJ~VvFxTm~wM6duVK1eg~8Rtir7g__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA)">
+  <div class="logo-position">
   </div>
+  <div class="header-phrase">
+    <h1>Error 500</h1>
+    <p>Oops! Another bug to fix!</p>
+  </div>
+</div>
 </body>
 </html>

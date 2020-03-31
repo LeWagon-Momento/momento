@@ -5,19 +5,20 @@ class TripsController < ApplicationController
   def index
     @trips = []
     Trip.all.each do |trip|
-      unless trip.end_date.nil?
+      unless trip.end_date.nil? && trip.user == current_user
         @trips << trip
       end
     end
     @trips
 
     # checking user's location
-    current_location = request.location
+    @current_location = request.location
     # user's array of active trips
     users_active_trips = current_user.trips.where(end_date: nil)
-
-    if current_location.city != current_user.city.name && users_active_trips.count > 0
-      redirect_to new_trip_path, :notice => "You are now in #{current_location.city} and you do not have any active trips. Starting a new trip..."
+    if @current_location.city != current_user.city.name && users_active_trips.count > 0
+      respond_to do |format|
+        format.html
+      end
     end
   end
 
@@ -49,6 +50,8 @@ class TripsController < ApplicationController
   # Review Trip method
   def review
     @trip = Trip.find(params[:trip_id])
+    @trip.end_date = Date.today
+    @trip.save
     @trip_review_url = "https://sharing-the-momento.herokuapp.com/trips/#{@trip.id}/review"
 
     @posts = @trip.posts

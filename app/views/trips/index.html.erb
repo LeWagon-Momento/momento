@@ -1,12 +1,16 @@
 <div class="text-center mt-3">
-<h1><em>View your past moments!</em></h1>
+<h1 id="home-heading"><em>View your past moments!</em></h1>
 </div>
 
 
 <% @trips.each do |trip| %>
   <%= link_to trip_path(trip) do %>
     <div class="card-trip" >
-      <img class="card-img" src="https://source.unsplash.com/random" alt="No image found">
+        <% if trip.posts.first.photos.empty? %>
+        <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" class="card-trip" />
+      <% else %>
+        <%= cl_image_tag trip.posts.first.photos[0] , class: "card-trip"%>
+      <% end %>
       <div class="card-body">
         <h3><%= trip.name %></h3>
         <p><%= trip.start_date.strftime('%d %B %Y') %> - <%= trip.end_date.strftime('%d %B %Y') %></p>
@@ -19,6 +23,8 @@
 <% @no_container = true %>
 <!-- <div class="btn button-large draggable"> Hello </div>
 
+
 <div class="btn button-small">Click</div> -->
 
-<%= link_to "log out", destroy_user_session_path, method: :delete %>
+
+

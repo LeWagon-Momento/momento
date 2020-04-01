@@ -6,6 +6,12 @@ class Admin::TripsController < ApplicationController
     else
       redirect_to user_session_path(@user) # unsure if this is correct or how is this working
     end
+    # @uploads = User.find(params[:id]).posts.find(params[:id])
+    # @uploadz = User.all.posts.all
+    # @uploads = Post.all
+    # @uploads = Post.all[0].created_at
+    # Post.all[0].id
+
   end
 
   def edit

@@ -1,4 +1,8 @@
-<h1>ALL TRIPS</h1>
+<h1><%= @uploads %></h1>
+
+
+
+<h1>ALL TRIPS ---> <span style="font-size: 60px;">[ <%= Trip.count %> ]</span></h1>
 <br>
 <% @trips.each do |trip| %>
   <h1> <%= trip.name  %> [ <%= trip.id %> ] </h1>
@@ -9,10 +13,14 @@
 
 <br>
 
+<h1>USERS ---> <span style="font-size: 60px;">[ <%= User.count %> ]</span></h1>
+
 <% @users.each do |user| %> <!-- pull out from profile pic for host country -->
  <h1>[ <%= user.id %> ] <%= user.name %> </h1>
  <h2><%= user.email %></h2>
  <h2><%= user.country.name %></h2>
+ <h2><%= user.last_seven_days_post.count %></h2> <!-- how am i able to implmement this? why is it done this way?
+
 <%  end %>
 
 

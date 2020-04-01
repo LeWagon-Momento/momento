@@ -27,6 +27,7 @@ gem 'pry'
 gem 'ngrok'
 gem 'jquery-rails'
 gem 'non-stupid-digest-assets'
+gem 'sweet-alert2-rails'
 
 
 # Use CoffeeScript for .coffee assets and views

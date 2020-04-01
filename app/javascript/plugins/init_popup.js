@@ -1,9 +1,9 @@
 import Swal from 'sweetalert2'
 
-
 const initPopUpBox = () => {
-  const homeHeading = document.querySelector('#home-heading')
+  const homeHeading = document.querySelector('.home-heading')
   if(homeHeading) {
+      console.log("kenn")
     if((currentCity != userCity) && noTrips === 'true') {
       Swal.fire({
       title: 'Do you want to start a new trip?',

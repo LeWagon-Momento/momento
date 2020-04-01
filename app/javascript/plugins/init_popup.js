@@ -4,20 +4,21 @@ import Swal from 'sweetalert2'
 const initPopUpBox = () => {
   const homeHeading = document.querySelector('#home-heading')
   if(homeHeading) {
-    Swal.fire({
-    title: 'Do you want to start a new trip?',
-    icon: 'info',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    reverseButtons: true,
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, Start a new trip!'
-    }).then((result) => {
-      if (result.value) {
-        window.location = '/trips/new'
-      }
-    })
-
+    if((currentCity != userCity) && noTrips === 'true') {
+      Swal.fire({
+      title: 'Do you want to start a new trip?',
+      icon: 'info',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      reverseButtons: true,
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Start a new trip!'
+      }).then((result) => {
+        if (result.value) {
+          window.location = '/trips/new'
+        }
+      })
+    }
   }
 };
 

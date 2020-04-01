@@ -18,12 +18,15 @@
 
 .description-input {
   border: 1px solid $second-color;
-  border-radius: 5px 32px;
 }
 
 .address-input {
   border: 0px solid $second-color;
   border-bottom: 1px solid $second-color;
+}
+
+.position-icon {
+  position: relative;
 }
 
 // .description-input::after,

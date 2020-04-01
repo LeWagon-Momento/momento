@@ -134,6 +134,24 @@
       </div>
 
   <% end %>
+
+<!-- comment area -->
+    <div class="">
+      <div class="">
+        <div class="title-review">Comments</div>
+        <%= link_to "New Comment", new_trip_comment_path(@trip), class: "btn btn-success btn-lg btn-block"%>
+      </div>
+      <% @trip.comments.each do |comment| %>
+        <div class="d-flex flex-column">
+          <div class="d-flex justify-content-between">
+            <p class="mb-0"><%= comment.name %></p>
+            <p class="mb-0"><%= comment.created_at.strftime('%d %b %Y') %></p>
+          </div>
+          <p class="mt-2"><%= comment.comment_description %></p>
+        </div>
+      <% end %>
+    </div>
+
       <div class="wa-review">
         <a href="https://wa.me/?text=<%= @trip_review_url %>">Share via Whatsapp</a>
       </div>

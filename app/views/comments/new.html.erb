@@ -1,0 +1,5 @@
+<%= simple_form_for new_trip_comment_path(@trip) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :comment_description, as: :text %>
+  <%= f.button :submit, 'Comment!', class: "btn btn-primary" %>
+<% end %>

@@ -60,6 +60,7 @@
   // Button for new photo in post new
   // Diff: added border with 2px for it to be visible
   // Changed height to 0 and width is longer
+  // position relative, to put on image div
   height: 0px ;
   width: 110px;
   padding: 4px 8px;
@@ -78,6 +79,9 @@
   transition: all .2s ease-out;
   text-align: center;
   background-color: $white;
+  position: relative;
+  right: -290px;
+  top: -40px;
 }
 
 .button-small-post-new:hover {

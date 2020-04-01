@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :trips, dependent: :destroy
   has_many :posts, through: :trips # through, lecture, added in for tracking upload metrics
+  has_many :userlogins # how do i know if this is working?. RUN MIGRATIONS
   belongs_to :country
   has_one_attached :photo # this is important in doing the photo feature
 

@@ -26,7 +26,7 @@ cb = Country.create(name: "Cambodia")
 
 #Seeding Users
 max = User.new(email: "max@gmail.com", password: "123456", name: "Max")
-dexter = User.new(email: "dexter@gmail.com", password: "123456", name: "Dexter")
+dexter = User.new(email: "dexter@gmail.com", password: "123456", name: "Dexter", admin: true)
 kenn = User.new(email: "kenn@gmail.com", password: "123456", name: "Kenn")
 
 #Association User + country

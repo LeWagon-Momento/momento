@@ -14,12 +14,14 @@
   <div class="main-body mt-0">
     <!-- Name input -->
     <%= f.input :name, label: false, input_html: { placeholder: "Nice title here!", class: "title-input" } %>
-    <!-- Address input -->
-    <%= f.input :address, input_html: { id: "search", placeholder: "Location", class: "address-input" } %>
-    <!-- Button to search address for mapbox and wiki api -->
-    <%= button_tag(type: 'button', id: "wiki-button", class: "button-small") do %>
-      Search
-    <% end %>
+    <div class="position-icon">
+      <!-- Address input -->
+      <%= f.input :address, label: false, input_html: { id: "search", placeholder: "Location", class: "address-input" } %>
+      <!-- Button to search address for mapbox and wiki api -->
+      <%= button_tag(type: 'button', id: "wiki-button", class: "button-rectangle") do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+    </div>
     <!-- Description input -->
     <%= f.input :description, input_html: { id: "wiki-info", rows: 5, class: "description-input" } %>
     <!-- Checkbox as slider with flexbox for wiki info words on same line-->

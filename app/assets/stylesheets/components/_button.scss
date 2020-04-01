@@ -89,3 +89,17 @@
   background-size: 100% 5px, auto;
   color: $main-color;
 }
+
+// For location search icon
+.button-rectangle {
+  background-color: $white;
+  border: 0px;
+  font-family: $body-font ;
+  font-size: 14px;
+  font-color: $main-color;
+  color: $main-color;
+  display:table-cell;
+  position: absolute;
+  top: 10px;
+  left: 295px;
+}

@@ -63,6 +63,8 @@ class TripsController < ApplicationController
         lng: post.longitude
       }
     end
+
+    @comment = Comment.new
   end
 
   private

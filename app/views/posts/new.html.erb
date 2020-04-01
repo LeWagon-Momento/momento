@@ -1,27 +1,27 @@
-<div id="image-one-full">
-  <img id="no-image" src="https://semantic-ui.com/images/wireframe/image.png" alt="" width="100%" >
-</div>
 
 <%= simple_form_for [@trip, @post] do |f| %>
   <!-- container to add spacing, can't do it outside -->
-  <div class="main-body">
   <!-- Button to add photos -->
+  <div id="image-one-full">
+    <img id="no-image" src="https://semantic-ui.com/images/wireframe/image.png" alt="" width="100%" >
     <label class="button-small-post-new">
       <i class="fas fa-camera"></i> New photo
       <span style="display:none;">
         <%= f.input :photos, as: :file, input_html: { multiple: true, accept: "image/*", id: "display-image" } %>
       </span>
     </label>
+  </div>
+  <div class="main-body mt-0">
     <!-- Name input -->
-    <%= f.input :name, label: "New Post Title", input_html: { placeholder: "Nice title here!" } %>
+    <%= f.input :name, label: false, input_html: { placeholder: "Nice title here!", class: "title-input" } %>
     <!-- Address input -->
-    <%= f.input :address, input_html: { id: "search", placeholder: "Location" } %>
+    <%= f.input :address, input_html: { id: "search", placeholder: "Location", class: "address-input" } %>
     <!-- Button to search address for mapbox and wiki api -->
     <%= button_tag(type: 'button', id: "wiki-button", class: "button-small") do %>
       Search
     <% end %>
     <!-- Description input -->
-    <%= f.input :description, input_html: { id: "wiki-info", rows: 5 } %>
+    <%= f.input :description, input_html: { id: "wiki-info", rows: 5, class: "description-input" } %>
     <!-- Checkbox as slider with flexbox for wiki info words on same line-->
     <div class="d-flex align-items-center">
       <div class="checkbox-switch">
@@ -31,7 +31,7 @@
         </label>
       </div>
       <div>
-        <p class="edit-text-margin">Wiki info</p>
+        <p class="edit-text-margin"><em>Wiki info</em></p>
       </div>
     </div>
     <!-- Date input -->

@@ -23,8 +23,10 @@ const initPostMapbox = () => {
             center: [data.features[0].center[0], data.features[0].center[1]],
             zoom: 12
           });
+          // const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
           new mapboxgl.Marker()
             .setLngLat([data.features[0].center[0], data.features[0].center[1]])
+            // .setPopup(popup) // add this
             .addTo(map);
         });
     });

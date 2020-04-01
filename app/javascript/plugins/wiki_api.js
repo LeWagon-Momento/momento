@@ -6,7 +6,8 @@ const wikiApi = () => {
       console.log(searchValue.value);
       const cityName = searchValue.value;
       const placeNames = cityName.replace( " ", "%20" );
-      const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&list=search&srsearch=${placeNames}&formatversion=2&exsentences=5&exlimit=1&explaintext=1`;
+      const removedCountry = placeNames.replace(/(,.[^,]+)$/, "")
+      const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&list=search&srsearch=${removedCountry}&formatversion=2&exsentences=5&exlimit=1&explaintext=1`;
       const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
       fetch(proxyUrl + url)
       .then(response => response.json())

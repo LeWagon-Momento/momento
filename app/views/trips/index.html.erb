@@ -1,5 +1,5 @@
-<div class="text-center mt-3">
-<h1 id="home-heading"><em>View your past moments!</em></h1>
+<div class="home-heading text-center mt-3">
+Explore the world
 </div>
 
 
@@ -11,14 +11,13 @@
       <% else %>
         <%= cl_image_tag trip.posts.first.photos[0].key, class: "card-trip"%>
       <% end %>
-      <div class="card-body">
+      <div class="card-body d-flex justify-content-between">
         <h3><%= trip.name %></h3>
-        <p><%= trip.start_date.strftime('%d %B %Y') %> - <%= trip.end_date.strftime('%d %B %Y') %></p>
+        <p><%= trip.start_date.strftime('%B %Y') %></p>
       </div>
     </div>
   <% end %>
 <% end %>
-
 
 <% @no_container = true %>
 <!-- <div class="btn button-large draggable"> Hello </div>

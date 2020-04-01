@@ -5,7 +5,7 @@ class TripsController < ApplicationController
   def index
     @trips = []
     Trip.all.each do |trip|
-      unless trip.end_date.nil? && trip.user == current_user
+      unless trip.end_date.nil? && trip.user != current_user
         @trips << trip
       end
     end

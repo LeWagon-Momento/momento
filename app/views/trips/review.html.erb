@@ -143,35 +143,40 @@
       </div>
     </div>
 
-    <div class= "title-review">
-      The end
-      </div>
+    <div class="title-review">
+      <h4>The end </h4>
+    </div>
 
   <% end %>
 
+  <!-- WA Button  -->
+  <div class="btn-review text-align-center">
+        <a href="https://wa.me/?text=<%= @trip_review_url %>"> <i class="fab fa-whatsapp"></i> Share via Whatsapp</a>
+  </div>
+
+
 <!-- comment area -->
     <div class="">
-      <div class="">
-        <div class="title-review">Comments</div>
-        <!-- logic to not show button if it is current user -->
-        <% if current_user.nil? %>
-          <%= link_to "New Comment", new_trip_comment_path(@trip), class: "btn btn-success btn-lg btn-block"%>
-        <% end %>
+      <div class="comment-logic">
+          <div class="title-review comment-title">Comments</div>
       </div>
+
+
       <% @trip.comments.each do |comment| %>
-        <div class="d-flex flex-column">
-          <div class="d-flex justify-content-between">
-            <p class="mb-0"><%= comment.name %></p>
-            <p class="mb-0"><%= comment.created_at.strftime('%d %b %Y') %></p>
+        <div class="d-flex flex-column flex-end">
+          <div class="d-flex justify-content-between info-comment">
+            <p class="mb-0 comment-name"><%= comment.name %></p>
+            <p class="mb-0 comment-date"><%= comment.created_at.strftime('%d %b %Y') %></p>
           </div>
-          <p class="mt-2"><%= comment.comment_description %></p>
+          <p class="comment-description">" <%= comment.comment_description%>"</p>
         </div>
       <% end %>
     </div>
-
-      <div class="button-large">
-        <a class="button-large" href="https://wa.me/?text=<%= @trip_review_url %>">Share via Whatsapp</a>
-      </div>
+        <div class="comment-btn">
+        <% if current_user.nil? %>
+          <%= link_to "Leave a comment", new_trip_comment_path(@trip), class: "btn-review-comment"%>
+        <% end %>
+        </div>
 
 </div>
 

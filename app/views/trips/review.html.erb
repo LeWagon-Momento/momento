@@ -153,7 +153,10 @@
     <div class="">
       <div class="">
         <div class="title-review">Comments</div>
-        <%= link_to "New Comment", new_trip_comment_path(@trip), class: "btn btn-success btn-lg btn-block"%>
+        <!-- logic to not show button if it is current user -->
+        <% if current_user.nil? %>
+          <%= link_to "New Comment", new_trip_comment_path(@trip), class: "btn btn-success btn-lg btn-block"%>
+        <% end %>
       </div>
       <% @trip.comments.each do |comment| %>
         <div class="d-flex flex-column">

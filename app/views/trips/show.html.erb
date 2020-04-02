@@ -17,64 +17,61 @@
 
       <div class="timeline-item">
         <!-- This is the circle on the line -->
-    <%= link_to trip_post_path(@trip, post) do  %>
-        <div class="timeline-img"></div>
-        <div class="timeline-content timeline-card js--fadeInRight">
-          <!-- This is the picture class -->
-          <% if post.photos.empty? %>
-            <img class="timeline-img-header" src="https://semantic-ui.com/images/wireframe/image.png" >
-          <% else %>
-            <%= cl_image_tag post.photos[0].key, class: "timeline-img-header"%>
-          <% end %>
-          <!-- This is the date box format -->
-          <div class="timeline-date"><%= post.date.strftime("%d of %b") %></div>
+      <%= link_to trip_post_path(@trip, post) do  %>
+          <div class="timeline-img"></div>
+          <div class="timeline-content timeline-card js--fadeInRight">
+            <!-- This is the picture class -->
+            <% if post.photos.empty? %>
+              <img class="timeline-img-header" src="https://semantic-ui.com/images/wireframe/image.png" >
+            <% else %>
+              <%= cl_image_tag post.photos[0].key, class: "timeline-img-header"%>
+            <% end %>
+            <!-- This is the date box format -->
+            <div class="timeline-date"><%= post.date.strftime("%d of %b") %></div>
+          </div>
+          <div class="post-name js--fadeInRight"><%= post.name %></div>
         </div>
-        <div class="post-name js--fadeInRight"><%= post.name %></div>
-      </div>
-    <% end %>
+      <% end %>
     <% end %>
 
     <div class="timeline-item">
         <!-- This is the circle on the line -->
-        <div class="timeline-img"></div>
+      <div class="timeline-img"></div>
 
-        <div class="timeline-content timeline-card js--fadeInRight ">
-          <!-- This is the picture class -->
-          <%= link_to "", new_trip_post_path(@trip), class: "last-timeline-img-header" %>
+      <div class="timeline-content timeline-card js--fadeInRight ">
+        <!-- This is the picture class -->
+        <%= link_to "", new_trip_post_path(@trip), class: "last-timeline-img-header" %>
 
-          <!-- This is the date box format -->
-        </div>
-        <div class="new-post-text">Please click to create a new post</div>
+        <!-- This is the date box format -->
       </div>
+      <div class="new-post-text">Please click to create a new post</div>
+    </div>
 
     <div class="fixed-bottom">
 
       <div id="flip" class="text-center">Click to see trip details</div>
 
       <div id="panel">
-        <div class="d-flex flex-column w-50">
-        <!-- This is the left items -->
-        <div class="d-flex justify-content-around info-card">
-        <!-- This is the trip name -->
-        <div class="info-header"><%= @trip.name %></div>
+        <div class="panel-relative">
+          <img src="https://s3-alpha-sig.figma.com/img/298d/5706/904e1fb7641cb692bf44018a125c0d85?Expires=1586736000&Signature=EVL40wYU~r6Ez43RA1HBKuXiZ9-07-Dfz719Wu1GIari4mqlMayGt02zShsmvtvQDjS9FP9amOwSakPh1NxfUBa1YqcLCKz~W-NkCIZtls-SC0BNXi0TADYPEx71h-~~Ec8tfbFQCXz36Pp6wKvwAxbsjzJZK4AjIBQTSpMkRu6Y6CxB4FAT5RZt3PcNvWVuOcph0CxjBnG7I9p2f1Q7EJRM6ierK7vmqqE~E2kC9AOTOr-jp2juTH~9NMkvBBi0vG3ereJ0Af-4n6P1kc5TmGlL63s-C6eDlleH7Zj4noTKb-HVF~5eCfbNIt7BWxpijxzBcxYPPsWWCgT9clpFcg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" alt="no-image">
+          <div class="flex-header-absolute">
+            <h3><%= @trip.name %></h3>
+            <%= link_to "End Trip", trip_trip_path(@trip), class: "info-button" %>
+          </div>
+          <div class="description-absolute">
+            <p><%= @trip.description %></p>
+          </div>
+        </div>
+
          <!-- This is the end trip button -->
-        <%= link_to "End Trip", trip_trip_path(@trip), class: "button-small info-button" %>
       </div>
 
       <!-- This is the info description -->
-      <div class="info-description">
-        <%= @trip.description %>
-      </div>
-      <!-- This is the cities tags -->
-<!--       <div class="row row-cols-3 w-auto ml-4 mt-1">
-        <span class="info-tag col">China</span>
-        <div class="info-tag col">Singapore</div>
-        <div class="info-tag col">Singapore</div>
-      </div> -->
 
-    </div>
+
+
+
   </div>
-</div>
 
   </div>
 </section>

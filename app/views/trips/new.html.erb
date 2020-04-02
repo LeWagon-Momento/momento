@@ -1,5 +1,5 @@
 <%= simple_form_for @trip do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.button :submit %>
+  <%= f.input :name, input_html: { placeholder: "Name your trip!", class: "title-input" } %>
+  <%= f.input :description, input_html: { placeholder: "make it special!", class: "title-input" } %>
+  <%= f.button :submit, class: "button-large"  %>
 <% end %>

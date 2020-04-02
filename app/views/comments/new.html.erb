@@ -1,5 +1,5 @@
 <%= simple_form_for ([@trip, @comment]) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :comment_description, as: :text %>
-  <%= f.button :submit, 'Comment!', class: "btn btn-primary" %>
+  <%= f.input :name, input_html: { placeholder: "We want to know who you are!", class: "title-input"} %>
+  <%= f.input :comment_description, as: :text, input_html: { placeholder: "Let us know what you think!", class: "title-input"} %>
+  <%= f.button :submit, 'Comment!', class: "button-large" %>
 <% end %>

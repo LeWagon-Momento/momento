@@ -13,17 +13,17 @@
   </div>
   <div class="main-body mt-0">
     <!-- Name input -->
-    <%= f.input :name, label: false, input_html: { placeholder: "Nice title here!", class: "title-input" } %>
+    <%= f.input :name, label: false, input_html: { placeholder: "Enter a nice title here!", class: "title-input" } %>
     <div class="position-icon">
       <!-- Address input -->
-      <%= f.input :address, label: false, input_html: { id: "search", placeholder: "Location", class: "address-input" } %>
+      <%= f.input :address, label: false, input_html: { id: "search", placeholder: "Enter the location", class: "address-input" } %>
       <!-- Button to search address for mapbox and wiki api -->
       <%= button_tag(type: 'button', id: "wiki-button", class: "button-rectangle") do %>
         <i class="fas fa-search"></i>
       <% end %>
     </div>
     <!-- Description input -->
-    <%= f.input :description, input_html: { id: "wiki-info", rows: 5, class: "description-input" } %>
+    <%= f.input :description, label: false, input_html: { id: "wiki-info", placeholder: "Enter a description or you can always use the prefill option. Give it a go!", rows: 5, class: "description-input mt-5" } %>
     <!-- Checkbox as slider with flexbox for wiki info words on same line-->
     <div class="d-flex align-items-center">
       <div class="checkbox-switch">
@@ -33,11 +33,11 @@
         </label>
       </div>
       <div>
-        <p class="edit-text-margin"><em>Wiki info</em></p>
+        <p class="edit-text-margin"><em>Prefill Description</em></p>
       </div>
     </div>
     <!-- Date input -->
-    <%= f.input :date, as: :date %>
+    <%= f.input :date, as: :date, html5: true %>
   </div>
   <!-- Submit button fixed to bottom -->
   <div class="submit-fixed-bottom pt-2 pb-2 sticky-submit-button">

@@ -56,7 +56,11 @@
           <img src="https://s3-alpha-sig.figma.com/img/298d/5706/904e1fb7641cb692bf44018a125c0d85?Expires=1586736000&Signature=EVL40wYU~r6Ez43RA1HBKuXiZ9-07-Dfz719Wu1GIari4mqlMayGt02zShsmvtvQDjS9FP9amOwSakPh1NxfUBa1YqcLCKz~W-NkCIZtls-SC0BNXi0TADYPEx71h-~~Ec8tfbFQCXz36Pp6wKvwAxbsjzJZK4AjIBQTSpMkRu6Y6CxB4FAT5RZt3PcNvWVuOcph0CxjBnG7I9p2f1Q7EJRM6ierK7vmqqE~E2kC9AOTOr-jp2juTH~9NMkvBBi0vG3ereJ0Af-4n6P1kc5TmGlL63s-C6eDlleH7Zj4noTKb-HVF~5eCfbNIt7BWxpijxzBcxYPPsWWCgT9clpFcg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" alt="no-image">
           <div class="flex-header-absolute">
             <h3><%= @trip.name %></h3>
-            <%= link_to "End Trip", trip_trip_path(@trip), class: "info-button" %>
+            <% if @trip.end_date.nil? %>
+              <%= link_to "End Trip", trip_trip_path(@trip), class: "info-button" %>
+            <% else %>
+              <%= link_to "Review!", trip_trip_path(@trip), class: "info-button" %>
+            <% end %>
           </div>
           <div class="description-absolute">
             <p><%= @trip.description %></p>

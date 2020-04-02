@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   get 'comment/new'
   get 'comment/create'
-  devise_for :users
+  devise_for :users,
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'trips#index'
   get 'users/:id', to: 'users#show', as: 'user'
   get 'users/:id/edit', to: 'users#edit' # took reference from lecture

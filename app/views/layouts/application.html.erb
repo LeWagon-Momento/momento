@@ -10,6 +10,8 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <%= javascript_include_tag "application" %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
 
     <!-- All metas below here are for sharing (fb and whatsapp) -->
     <meta name="description" content="Come checkout Momento! The go-to app to share your trips memories">
@@ -33,11 +35,11 @@
 
     <div id="mySidenav" class="sidenav">
       <span class="closebtn"> Momento <i class="fas fa-globe-americas"></i> </span>
-      <%= link_to trips_path do %>
-        Home
-      <% end %>
       <% unless current_user.nil? %>
-        <%= link_to user_path(current_user) do %>
+        <%= link_to trips_path do %>
+          Home
+        <% end %>
+        <%= link_to trip_path(current_user) do %>
           Profile
         <% end %>
         <%= link_to new_trip_post_path(current_user) do %>

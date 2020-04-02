@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-  # skip_before_action :authenticate_user!, only: :show
+  skip_before_action :authenticate_user!, only: :review
   before_action :trip_find, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -58,7 +58,9 @@ class TripsController < ApplicationController
     @trip.save
     @trip_review_url = "https://sharing-the-momento.herokuapp.com/trips/#{@trip.id}/review"
 
+
     @posts = @trip.posts
+
     @post_counter = @posts.count
 
     @markers = @posts.map do |post|

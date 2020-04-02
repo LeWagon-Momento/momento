@@ -8,7 +8,9 @@
     <%= @trip.name %>
     <h4><%= @trip.start_date.strftime("%B %Y") %></h4>
     <div>
-      <%= cl_image_tag @posts.first.photos[0].key , class: "img-background-review" %>
+      <%= link_to trip_post_path(@trip, @posts[0]) do  %>
+        <%= cl_image_tag @posts.first.photos[0].key , class: "img-background-review" %>
+      <% end %>
       <p><%=@trip.description %></p>
     </div>
   </div>
@@ -48,7 +50,9 @@
   <!-- Block with one picture - description -->
 
     <div class = "description-middle-card-review">
-      <%= cl_image_tag @posts[1].photos[0].key , class: "img-medium-review" %>
+      <%= link_to trip_post_path(@trip, @posts[1]) do  %>
+        <%= cl_image_tag @posts[1].photos[0].key , class: "img-medium-review" %>
+      <% end %>
       <div class="text-middle-card-review">
         <p class="middle-card-name-review"><%= @posts[0].name %></p>
         <p class="middle-card-description-review"><%= @posts[0].description %></p>
@@ -59,12 +63,16 @@
     <div class="small-card-block-review d-flex justify-content-between mt-4">
       <!--number 1 -->
       <div class = "card-review">
-        <%= cl_image_tag @posts[2].photos[0].key , class: "img-small-review1" %>
+        <%= link_to trip_post_path(@trip, @posts[2]) do  %>
+          <%= cl_image_tag @posts[2].photos[0].key , class: "img-small-review1" %>
+        <% end %>
       </div>
 
       <!-- number 2 -->
       <div class = "card-review">
-        <%= cl_image_tag @posts[3].photos[0].key , class: "img-small-review2" %>
+        <%= link_to trip_post_path(@trip, @posts[3]) do  %>
+          <%= cl_image_tag @posts[3].photos[0].key , class: "img-small-review2" %>
+        <% end %>
       </div>
     </div>
 
@@ -73,12 +81,16 @@
     <div class="small-card-block-review d-flex justsify-content-between mt-4">
       <!--number 3 -->
       <div class = "card-review">
-        <%= cl_image_tag @posts[4].photos[0].key , class: "img-small-review3" %>
+        <%= link_to trip_post_path(@trip, @posts[4]) do  %>
+          <%= cl_image_tag @posts[4].photos[0].key , class: "img-small-review3" %>
+        <% end %>
       </div>
 
       <!--number 4 -->
       <div class = "card-review">
-        <%= cl_image_tag @posts[5].photos[0].key , class: "img-small-review4" %>
+        <%= link_to trip_post_path(@trip, @posts[5]) do  %>
+          <%= cl_image_tag @posts[5].photos[0].key , class: "img-small-review4" %>
+        <% end %>
       </div>
     </div>
     <!-- @trip_review_url is defined in controller -->
@@ -124,7 +136,9 @@
 
 
     <div class = "end-card-review">
-      <%= cl_image_tag @posts.last.photos[0].key , class: "img-end-review" %>
+      <%= link_to trip_post_path(@trip, @posts.last) do  %>
+        <%= cl_image_tag @posts.last.photos[0].key , class: "img-end-review" %>
+      <% end %>
       <div class="text-middle-card-review">
       </div>
     </div>
@@ -139,7 +153,10 @@
     <div class="">
       <div class="">
         <div class="title-review">Comments</div>
-        <%= link_to "New Comment", new_trip_comment_path(@trip), class: "btn btn-success btn-lg btn-block"%>
+        <!-- logic to not show button if it is current user -->
+        <% if current_user.nil? %>
+          <%= link_to "New Comment", new_trip_comment_path(@trip), class: "btn btn-success btn-lg btn-block"%>
+        <% end %>
       </div>
       <% @trip.comments.each do |comment| %>
         <div class="d-flex flex-column">

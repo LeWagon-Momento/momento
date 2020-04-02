@@ -33,23 +33,25 @@
 
     <div id="mySidenav" class="sidenav">
       <span class="closebtn"> Momento <i class="fas fa-globe-americas"></i> </span>
-      <%= link_to trips_path do %>
-        Home
-      <% end %>
-      <%= link_to trip_path(current_user) do %>
-        Profile
-      <% end %>
-      <%= link_to new_trip_post_path(current_user) do %>
-        Current Trip
-      <% end %>
-      <%= link_to trip_trip_path(current_user) do %>
-        Last Trip Review
-      <% end %>
-       <%= link_to trips_path do %>
-        Past Trips
-      <% end %>
-      <%= link_to destroy_user_session_path, method: :delete do %>
-        Log out
+      <% unless current_user.nil? %>
+        <%= link_to trips_path do %>
+          Home
+        <% end %>
+        <%= link_to trip_path(current_user) do %>
+          Profile
+        <% end %>
+        <%= link_to new_trip_post_path(current_user) do %>
+          Current Trip
+        <% end %>
+        <%= link_to trip_trip_path(current_user) do %>
+          Last Trip Review
+        <% end %>
+         <%= link_to trips_path do %>
+          Past Trips
+        <% end %>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          Log out
+        <% end %>
       <% end %>
     </div>
 

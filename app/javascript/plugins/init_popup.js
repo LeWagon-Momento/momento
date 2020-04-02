@@ -6,13 +6,24 @@ const initPopUpBox = () => {
       console.log("kenn")
     if((currentCity != userCity) && noTrips === 'true') {
       Swal.fire({
-      title: 'Do you want to start a new trip?',
+      customClass: {
+          confirmButton: 'button-large mr-2 px-5',
+          cancelButton: 'button-large'
+        },
+      buttonsStyling: false,
+      title: '<div class="poptitle">We noticed that you are overseas! Do you want to start a new trip?</div>',
+      showClass: {
+        popup: 'animated fadeInDown slow'
+      },
+      hideClass: {
+        popup: 'animated fadeOutUp slow'
+      },
       icon: 'info',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      reverseButtons: true,
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, Start a new trip!'
+      // confirmButtonColor: 'button-small',
+      // reverseButtons: true,
+      // cancelButtonColor: '#d33',
+      confirmButtonText: 'Start!'
       }).then((result) => {
         if (result.value) {
           window.location = '/trips/new'

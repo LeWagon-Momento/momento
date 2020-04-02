@@ -1,108 +1,16 @@
-<!-- <h1><%= @uploads %></h1> what the fuck is this -->
+<!-- TRIPS.ALL INDEX -->
 
-<div class="container" style="">
+<h1>ALL TRIPS <span> [ <%= Trip.count %> ]</span></h1>
 
-
-  <div class="row" style="display: flex; align-items: space-between;">
-
-    <div class="column">
-
-      <div class="card" style="width: 10rem; height: 22rem;"> <!-- TRIP SECTION -->
-        <div class="card-body">
-
-          <h4 style="font-size: 15px;">ALL TRIPS ---> <span style="font-size: 40px;">[ <%= Trip.count %> ]</span></h4>
-          <br>
-          <% @trips.each do |trip| %>
-          <h5 style="font-size: 10px;"> <%= trip.name  %> [ <%= trip.id %> ] </h5>
-          <h6 style="font-size: 5px;"><%= trip.description %></h6>
-          <p style="font-size: 5px;">START:<%= trip.start_date %></p>
-          <p style="font-size: 5px;">END:<%= trip.end_date %></p>
-          <% end %>
-        </div>
-
-      </div>
-
-    </div>
+<%  @trips.each do |trip| %>
+ <p> <%= trip.name %> <span> [ <%= trip.id %> ] </span></p>
+ <p> <%= trip.description %> </p>
+ <p> <%= trip.start_date %> </p>
+ <p> <%= trip.end_date %> </p>
+ <button type="button" class="btn btn-primary"> <%= link_to "Delete", admin_trip_path(@trips) ,
+      method: :delete,
+      data: { confirm: "Are you sure?" } %> </button>
+ <!-- add the edit  -->
+<% end %>
 
 
-    <div class="column">
-      <div class="card" style="width: 10rem; height: 22rem;"> <!-- PROFILE SECTION -->
-
-        <div class="card-body">
-
-          <h1>USERS ---> <span style="font-size: 15px;">[ <%= User.count %> ]</span></h1>
-<!--
-          <% @users.each do |user| %> <!-- pull out from profile pic for host country
-          <h1>[ <%= user.id %> ] <%= user.name %> </h1>
-          <h2><%= user.email %></h2>
-          <h2><%= user.country.name %></h2>
-          <h2>UPLOADS: <%= user.last_seven_days_post.count %></h2> <!-- how am i able to implmement this? why is it done this way?
-          <% end %>
-          <h1> Number of logins for <%= @users.find(5).name %>: <%= @userlogin.count %> </h1>
-
-          <% if @userlogin.count > 40 %>  what can be wrong with this conditional here
-          <h1> <%=  puts "very active user" %> </h1>
-          <%end %>
--->
-
-        </div>
-      </div>
-    </div>
-</div>
-
-    <div class="row">
-
-      <div class="column">
-
-        <div class="card" style="width: 10rem; height: 22rem;"> <!-- PHOTOS -->
-
-          <div class="card-body">
-
-            <h6>PHOTOS</h6>
-
-            <p>Total number of photos:</p>
-            <p>recent upload count:</p>
-
-
-      </div>
-        </div>
-          </div> <!-- PHOTOS -->
-
-
-
-
-
-<div class="column">
-        <div class="card" style="width: 10rem; height: 22rem;"> <!-- METRICS -->
-
-          <div class="card-body">
-
-            <h6>METRICS</h6>
-            <p>total number of user log in</p>
-            <p>total number of user sessions</p>
-
-
-
-          </div>
-</div>
-
-        </div> <!-- METRICS -->
-
-
-
-
-    </div>
-
-
-
-
-
-
-    <div> <!-- ADMIN NAV BAR -->
-
-
-
-    </div>
-
-
-  </div>

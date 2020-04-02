@@ -1,9 +1,7 @@
 class Admin::TripsController < ApplicationController
-  def index
+  def index # THIS WILL SHOW ME ALL TRIPS NOT DASHBOARD FOR EVERYTHING
     if current_user.admin? # this is how i think admin trips controller verify if user is admin
-      @trips = Trip.all # after that you keep as many trips as you want to do testing
-      @users = User.all
-      @userlogin = Userlogin.all
+     @trips = Trip.all # not sure if this is the logic i am suppose to put but it makes sen because this is where i want to see ALL my trips and only trips
     else
       redirect_to user_session_path(@user) # unsure if this is correct or how is this working
     end

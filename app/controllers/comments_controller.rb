@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!, :except => [:new, :create]
   def new
     @trip = Trip.find(params[:trip_id])
     @comment = Comment.new

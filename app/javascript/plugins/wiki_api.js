@@ -13,7 +13,7 @@ const wikiApi = () => {
       .then(response => response.json())
       .then((data) => {
         const retrievedInfo = data["query"]["search"][0]["snippet"]
-        const refinedDescription = retrievedInfo.replace(/(<([^>]+)>)/ig, "" )
+        const refinedDescription = retrievedInfo.replace(/(<([^>]+)>)/ig, "" ) + "..."
         const detail = document.querySelector('#wiki-info');
         detail.placeholder = refinedDescription;
       })

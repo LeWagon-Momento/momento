@@ -3,7 +3,7 @@
 }
 
 
-// Everything below if for post new
+// Everything below is for post new
 .image-one-full img {
   height: 500px;
   position: relative;
@@ -27,6 +27,22 @@
 
 .position-icon {
   position: relative;
+}
+
+// placeholder color
+.title-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $gray;
+  opacity: 0.7; /* Firefox */
+}
+
+.description-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $gray;
+  opacity: 0.7; /* Firefox */
+}
+
+.address-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $gray;
+  opacity: 0.7; /* Firefox */
 }
 
 // .description-input::after,

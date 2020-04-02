@@ -23,7 +23,9 @@
       <% end %>
     </div>
     <!-- Description input -->
-    <%= f.input :description, label: false, input_html: { id: "wiki-info", placeholder: "Enter a description or you can always use the prefill option. Give it a go!", rows: 5, class: "description-input mt-5" } %>
+    <%= f.input :description, label: false, input_html: { id: "wiki-info", placeholder: "Unsure of how to describe this place?
+
+Give our description a go!", rows: 5, class: "description-input mt-5" } %>
     <!-- Checkbox as slider with flexbox for wiki info words on same line-->
     <div class="d-flex align-items-center">
       <div class="checkbox-switch">
@@ -33,7 +35,7 @@
         </label>
       </div>
       <div>
-        <p class="edit-text-margin"><em>Prefill Description</em></p>
+        <p class="edit-text-margin"><em>Our description!</em></p>
       </div>
     </div>
     <!-- Date input -->

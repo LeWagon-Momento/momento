@@ -3,14 +3,21 @@
 <h1>ALL TRIPS <span> [ <%= Trip.count %> ]</span></h1>
 
 <%  @trips.each do |trip| %>
- <p> <%= trip.name %> <span> [ <%= trip.id %> ] </span></p>
- <p> <%= trip.description %> </p>
- <p> <%= trip.start_date %> </p>
- <p> <%= trip.end_date %> </p>
- <button type="button" class="btn btn-primary"> <%= link_to "Delete", admin_trip_path(@trips) ,
-      method: :delete,
-      data: { confirm: "Are you sure?" } %> </button>
- <!-- add the edit  -->
+  <div class="card">
+    <div class="card-body">
+       <p> <%= trip.name %> <span> [ <%= trip.id %> ] </span></p>
+       <p> <%= trip.description %> </p>
+       <p> <%= trip.start_date %> </p>
+       <p> <%= trip.end_date %> </p>
+        <button type="button" class="btn btn-primary"> <%= link_to "Delete", admin_trip_path(@trips) ,
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+        </button>
+      <button type="button" class="btn btn-secondary"> <%= link_to "edit", edit_admin_trip_path(@trips), # having issues with my path
+        method: :get  %>
+      </button>
+    </div>
+  </div>
 <% end %>
 
 

@@ -1,0 +1,10 @@
+<h1>User Profiles</h1>
+<%  @users.each do |user| %>
+ <h2>ID: <%= user.id %></h2>
+ <h2> name: <%= user.name %> </h2>
+ <p>email: <%= user.email %></p>
+ <p>country: <%= user.country.name %></p>
+ <p>uploads: <%= user.last_seven_days_post.count %></p>
+ <p>log in sessions: <%= @userlogin.count %></p>
+
+<%  end %>

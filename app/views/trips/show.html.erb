@@ -3,18 +3,15 @@
 
 <section class="timeline">
   <div class="container">
-
+    <h2 class="text-center home-heading-timeline"> <%= @trip.name %> </h2>
     <div class="timeline-item">
-      <div class="timeline-img"></div>
       <div class="timeline-content js--fadeInLeft">
-        <h2 class="text-center mb-0">Start of Trip</h2>
       </div>
     </div>
 
 <!-- This is to iterate the posts in the trip -->
 
     <% @trip.posts.each do |post| %>
-
       <div class="timeline-item">
         <!-- This is the circle on the line -->
       <%= link_to trip_post_path(@trip, post) do  %>

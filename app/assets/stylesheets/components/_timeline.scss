@@ -6,7 +6,6 @@
   font-size: 22px;
   margin-right:44px;
   font-family: "Roboto", "sans-serif ";
-  margin-bottom:14px;
 }
 .post-name {
   position: relative;
@@ -115,7 +114,6 @@ header {
 
 .timeline-item {
   width: 100%;
-  margin-bottom: 10px;
 
   &:nth-child(even) {
 
@@ -272,7 +270,7 @@ blockquote {
 
     &::before {
       left: 50px;
-      top: 81px;
+      top: 180px;
     }
 
     .timeline-img {

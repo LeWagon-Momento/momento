@@ -3,12 +3,11 @@ import Swal from 'sweetalert2'
 const initPopUpBox = () => {
   const homeHeading = document.querySelector('.home-heading')
   if(homeHeading) {
-      console.log("kenn")
     if((currentCity != userCity) && noTrips === 'true') {
       Swal.fire({
       customClass: {
-          confirmButton: 'button-large mr-2 px-5',
-          cancelButton: 'button-large'
+          confirmButton: 'button-large mr-2 px-3',
+          cancelButton: 'button-large px-3'
         },
       buttonsStyling: false,
       title: '<div class="poptitle">We noticed that you are overseas! Do you want to start a new trip?</div>',
@@ -18,12 +17,12 @@ const initPopUpBox = () => {
       hideClass: {
         popup: 'animated fadeOutUp slow'
       },
-      icon: 'info',
       showCancelButton: true,
+      cancelButtonText: 'No',
       // confirmButtonColor: 'button-small',
       // reverseButtons: true,
       // cancelButtonColor: '#d33',
-      confirmButtonText: 'Start!'
+      confirmButtonText: 'Start !'
       }).then((result) => {
         if (result.value) {
           window.location = '/trips/new'

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   after_action :after_sign_in_path_for # tracking of login metric, to force it to go to after_sign_in_path method on line 14
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :photo, :email, :password, :country, :country_id])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :photo, :email, :password, :city, :city_id])
 
     # For additional in app/views/devise/registrations/edit.html.erb
     # devise_parameter_sanitizer.permit(:account_update, keys: [:username])

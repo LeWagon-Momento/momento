@@ -1,27 +1,31 @@
-<div id="image-one-full">
-  <img id="no-image" src="https://semantic-ui.com/images/wireframe/image.png" alt="" width="100%" >
-</div>
 
 <%= simple_form_for [@trip, @post] do |f| %>
   <!-- container to add spacing, can't do it outside -->
-  <div class="main-body">
   <!-- Button to add photos -->
+  <div id="image-one-full">
+    <img id="no-image" src="https://semantic-ui.com/images/wireframe/image.png" alt="" width="100%" >
     <label class="button-small-post-new">
       <i class="fas fa-camera"></i> New photo
       <span style="display:none;">
         <%= f.input :photos, as: :file, input_html: { multiple: true, accept: "image/*", id: "display-image" } %>
       </span>
     </label>
+  </div>
+  <div class="main-body mt-0">
     <!-- Name input -->
-    <%= f.input :name, label: "New Post Title", input_html: { placeholder: "Nice title here!" } %>
-    <!-- Address input -->
-    <%= f.input :address, input_html: { id: "search", placeholder: "Location" } %>
-    <!-- Button to search address for mapbox and wiki api -->
-    <%= button_tag(type: 'button', id: "wiki-button", class: "button-small") do %>
-      Search
-    <% end %>
+    <%= f.input :name, label: false, input_html: { placeholder: "Enter a nice title here!", class: "title-input" } %>
+    <div class="position-icon">
+      <!-- Address input -->
+      <%= f.input :address, label: false, input_html: { id: "search", placeholder: "Enter the location", class: "address-input" } %>
+      <!-- Button to search address for mapbox and wiki api -->
+      <%= button_tag(type: 'button', id: "wiki-button", class: "button-rectangle") do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+    </div>
     <!-- Description input -->
-    <%= f.input :description, input_html: { id: "wiki-info", rows: 5 } %>
+    <%= f.input :description, label: false, input_html: { id: "wiki-info", placeholder: "Unsure of how to describe this place?
+
+Give our description a go!", rows: 5, class: "description-input mt-5" } %>
     <!-- Checkbox as slider with flexbox for wiki info words on same line-->
     <div class="d-flex align-items-center">
       <div class="checkbox-switch">
@@ -31,11 +35,11 @@
         </label>
       </div>
       <div>
-        <p class="edit-text-margin">Wiki info</p>
+        <p class="edit-text-margin"><em>Our description!</em></p>
       </div>
     </div>
     <!-- Date input -->
-    <%= f.input :date, as: :date %>
+    <%= f.input :date, as: :date, html5: true %>
   </div>
   <!-- Submit button fixed to bottom -->
   <div class="submit-fixed-bottom pt-2 pb-2 sticky-submit-button">

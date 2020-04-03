@@ -2,6 +2,63 @@
   width: 100%; // resizing cover picture to fit
 }
 
+
+// Everything below is for post new
 .image-one-full img {
   height: 500px;
+  position: relative;
 }
+
+.title-input {
+  border: 0px solid $second-color;
+  border-bottom: 1px solid $second-color;
+  // border-radius: 5px 16px;
+
+}
+
+.description-input {
+  border: 1px solid $second-color;
+}
+
+.address-input {
+  border: 0px solid $second-color;
+  border-bottom: 1px solid $second-color;
+}
+
+.position-icon {
+  position: relative;
+}
+
+// placeholder color
+.title-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $gray;
+  opacity: 0.7; /* Firefox */
+}
+
+.description-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $gray;
+  opacity: 0.7; /* Firefox */
+}
+
+.address-input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $gray;
+  opacity: 0.7; /* Firefox */
+}
+
+// .description-input::after,
+// .description-input::before {
+//   background-color: white;
+//   content: "";
+//   display: block;
+//   height: 10px;
+//   position: absolute;
+//   width: 10px;
+// }
+// .description-input::after {
+//   bottom: -1px;
+//   right: -1px;
+// }
+// .description-input::before {
+//   top: -1px;
+//   left: -1px;
+// }

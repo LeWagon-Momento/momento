@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_01_113911) do
+
+ActiveRecord::Schema.define(version: 2020_04_02_043014) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,12 +37,21 @@ ActiveRecord::Schema.define(version: 2020_04_01_113911) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "countries", force: :cascade do |t|
+  create_table "cities", force: :cascade do |t|
     t.string "name"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "name"
+    t.text "comment_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "trip_id"
+    t.index ["trip_id"], name: "index_comments_on_trip_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -91,13 +101,25 @@ ActiveRecord::Schema.define(version: 2020_04_01_113911) do
     t.bigint "country_id"
     t.boolean "admin", default: false, null: false
     t.index ["country_id"], name: "index_users_on_country_id"
+    t.bigint "city_id"
+    t.string "provider"
+    t.string "uid"
+    t.string "facebook_picture_url"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "token"
+    t.datetime "token_expiry"
+    t.index ["city_id"], name: "index_users_on_city_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comments", "trips"
   add_foreign_key "posts", "trips"
   add_foreign_key "trips", "users"
   add_foreign_key "userlogins", "users"
   add_foreign_key "users", "countries"
+  add_foreign_key "users", "cities"
+
 end

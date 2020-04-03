@@ -8,25 +8,29 @@
   margin: 0 auto;
   text-align: center;
   color: $main-color;
-  margin: 0px;
+  margin: 0 auto;
 }
 .title-review h4{
   margin: 0 auto;
-  width: 50%;
+  width: 60%;
   font-family: $headers-font;
   font-size:16px;
   color: $second-color;
   font-weight: lighter;
   border-bottom: 1px solid $orange;
+  margin-top: 10px;
   margin-bottom: 20px;
   padding-bottom: 10px;
 }
 .title-review p{
-  font-size : 14px;
+  width:80%;
+  font-size : 22px;
   font-family: $body-font;
+  margin: 0 auto;
+  margin-bottom:10px;
 }
 .middle-card-description-review{
-  font-size:12px;
+  font-size:16px;
   font-family:$body-font;
   text-align: top;
   line-height: 1.1;
@@ -126,8 +130,10 @@
 }
 
 // Container for this page
+// HS here added margin-top because of sticky navbar which covers the header
 .container-review{
   margin: 30px;
+  margin-top: 70px;
   // background-color: white;
 }
 .small-card-block-review{
@@ -136,9 +142,85 @@
 
 .mapbox-box{
   margin-top: 20px;
+  margin-bottom: 20px;
+}
+.carousel-review{
+  margin-top: 20px;
+}
+.comment-logic{
+  text-align: center;
 }
 
-.wa-review{
-  margin:10px;
-  font-family: $body-font;
+
+.carousel-indicators{
+  color: $main-color;
 }
+
+// comment part
+
+.btn-review-comment{
+     height: 30px;
+    width: 130px;
+    border-radius: 20px;
+    border-color: #06908F;
+    font-family: "Open Sans", "sans-serif";
+    font-size: 14px;
+    font-color: #06908F;
+    color: #06908F;
+    display: table-cell;
+}
+
+.btn-review{
+  text-align:center;
+}
+.btn-review a{
+  padding: 10px;
+  margin: 0 auto;
+  color:white;
+  background-color: $main-color;
+  margin:10px;
+  font-family: $headers-font;
+  border-radius: 10px;
+}
+.comment-date{
+font-size:12px;
+}
+.comment-description{
+  margin:2px;
+  border-top: 1px solid $main-color;
+  font-style: italic;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.comment-name{
+  color:#5c5350;
+}
+.comment-btn{
+text-align:center;
+}
+
+.info-comment{
+align-items: flex-end;
+}
+
+
+.comment-title{
+  margin-top:20px;
+  width:60% ;
+  border-top: 1px solid $orange;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

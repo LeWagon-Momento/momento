@@ -1,10 +1,19 @@
+#facebook-btn {
+  color: $white;
+  background-color: #4267b2;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-radius: 5px;
+  font-weight: bold;
 
+
+}
 .button-small{
   // Adding Style to the Bootstrap btn
   height: 30px ;
   width: 70px;
   border-radius: 20px;
-  border-color: $main-color;
+  border: 1px solid $main-color;
   font-family: $body-font ;
   font-size: 14px;
   font-color: $main-color;
@@ -27,7 +36,7 @@
   height: 30px ;
   width: 130px;
   border-radius: 20px;
-  border-color: $main-color;
+  border: 1px solid $main-color;
   font-family: $body-font ;
   font-size: 14px;
   font-color: $main-color;
@@ -42,7 +51,8 @@
   transition: all .2s ease-out;
   text-align: center;
   padding-bottom: 5px;
-  padding-top: 5px;
+  padding-top: 3px;
+  margin-bottom:3px;
 }
 
 // hoover
@@ -60,6 +70,7 @@
   // Button for new photo in post new
   // Diff: added border with 2px for it to be visible
   // Changed height to 0 and width is longer
+  // position relative, to put on image div
   height: 0px ;
   width: 110px;
   padding: 4px 8px;
@@ -78,9 +89,26 @@
   transition: all .2s ease-out;
   text-align: center;
   background-color: $white;
+  position: relative;
+  right: -290px;
+  top: -40px;
 }
 
 .button-small-post-new:hover {
   background-size: 100% 5px, auto;
   color: $main-color;
+}
+
+// For location search icon
+.button-rectangle {
+  background-color: $white;
+  border: 0px;
+  font-family: $body-font ;
+  font-size: 14px;
+  font-color: $main-color;
+  color: $main-color;
+  display:table-cell;
+  position: absolute;
+  top: 10px;
+  left: 295px;
 }

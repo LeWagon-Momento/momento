@@ -1,9 +1,22 @@
 class TripsController < ApplicationController
-  # skip_before_action :authenticate_user!, only: :show
+  skip_before_action :authenticate_user!, only: :review
   before_action :trip_find, only: [:show, :edit, :update, :destroy]
 
   def index
-    @trips = Trip.all
+    @trips = current_user.trips
+
+    # checking user's location
+    @current_location = request.location
+    # user's array of active trips
+    @users_active_trips = current_user.trips.where(end_date: nil).empty?.to_s
+
+    # binding.pry
+    # if (@current_location.city != current_user.city.name) && @users_active_trips
+      respond_to do |format|
+        format.html
+        format.js
+      end
+    # end
   end
 
   def show
@@ -34,15 +47,23 @@ class TripsController < ApplicationController
   # Review Trip method
   def review
     @trip = Trip.find(params[:trip_id])
+    @trip.end_date = Date.today
+    @trip.save
     @trip_review_url = "https://sharing-the-momento.herokuapp.com/trips/#{@trip.id}/review"
 
+
     @posts = @trip.posts
+
+    @post_counter = @posts.count
+
     @markers = @posts.map do |post|
       {
         lat: post.latitude,
         lng: post.longitude
       }
     end
+
+    @comment = Comment.new
   end
 
   private

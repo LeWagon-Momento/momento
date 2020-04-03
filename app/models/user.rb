@@ -3,19 +3,40 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  devise :omniauthable, omniauth_providers: [:facebook]
   has_many :trips, dependent: :destroy
   has_many :posts, through: :trips #  added in for tracking upload metrics
   has_many :userlogins
   belongs_to :country
   has_one_attached :photo # this is important in doing the photo feature
-
-  def admin?
-    admin == true
-  end
-
-  def last_seven_days_post # for upload metric count feature
+  belongs_to :city
+  has_one_attached :photo
+  def self.find_for_facebook_oauth(auth)
+    user_params = auth.slice("provider", "uid")
+    user_params.merge! auth.info.slice("email", "first_name", "last_name")
+    user_params[:facebook_picture_url] = auth.info.image
+    user_params[:token] = auth.credentials.token
+    user_params[:token_expiry] = Time.at(auth.credentials.expires_at)
+    user_params = user_params.to_h
+    user = User.find_by(provider: auth.provider, uid: auth.uid)
+    user ||= User.find_by(email: auth.info.email) # User did a regular sign up in the past.
+    if user
+      user.update(user_params)
+    else
+      user = User.new(user_params)
+      user.password = Devise.friendly_token[0,20]  # Fake password for validation
+      user.city = City.first
+      user.save
+    end
+    return user
+    
+     def last_seven_days_post # for upload metric count feature
     posts.select do |post|
       post.created_at > (Date.today - 7)
     end
+    
+    def admin?
+    admin == true
+  end
   end
 end

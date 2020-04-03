@@ -1,14 +1,36 @@
+<div class="header fixed-top">
+  <%= link_to trip_path(@trip) do %>
+    <p class="back-buton"><i class="fas fa-arrow-left"></i></p>
+  <% end %>
+</div>
+
 <div id="image-one-full">
   <%= cl_image_tag @post.photos[0].key, class: "post-image" %>
   <!-- <img id="no-image" src="https://semantic-ui.com/images/wireframe/image.png" alt="" width="100%" > -->
 </div>
 
 <div class="main-body">
-  <h1><%= @post.name %></h1>
-  <h3 class="mt-4"><strong>Date: </strong><%= @post.date.to_formatted_s(:long_ordinal) %></h3>
-  <h4 class="mt-4"><strong>Address: </strong><%= @post.address %></h4>
-  <h5 class="mt-4"><strong>Description</strong></h5>
-  <p><%= @post.description %></p>
+  <!-- Post Title -->
+  <div class="d-flex bd-highlight">
+    <div class="p-2 bd-highlight">Title: </div>
+    <div class="title-input p-2 pl-0 flex-grow-1 bd-highlight"><%= @post.name %></div>
+  </div>
+  <!-- Post Date -->
+  <div class="d-flex bd-highlight">
+    <div class="p-2 bd-highlight">Date: </div>
+    <div class="title-input p-2 pl-0 flex-grow-1 bd-highlight"><%= @post.date.to_formatted_s(:long_ordinal) %></div>
+  </div>
+  <!-- Post Address -->
+  <div class="mt-4">
+    <div class="">Address: </div>
+    <div class="description-input mt-2 p-3"><%= @post.address %></div>
+  </div>
+  <!-- Post Description -->
+  <div class="mt-4">
+    <div class="">Description: </div>
+    <div class="description-input p-3"><%= @post.description %></div>
+  </div>
+
 </div>
 
 <!-- Mapbox -->
@@ -21,3 +43,4 @@
 ></div>
 
 <% @no_container = true %>
+<% @no_navbar = true %>

@@ -8,72 +8,177 @@
     <%= @trip.name %>
     <h4><%= @trip.start_date.strftime("%B %Y") %></h4>
     <div>
-      <%= cl_image_tag @posts[0].photos[0].key , class: "img-background-review" %>
+      <%= link_to trip_post_path(@trip, @posts[0]) do  %>
+        <%= cl_image_tag @posts.first.photos[0].key , class: "img-background-review" %>
+      <% end %>
       <p><%=@trip.description %></p>
     </div>
   </div>
 
+<!--  IF less than 6 pictures -> display a classic carousel -->
+  <% if @post_counter < 6 %>
+    <div class="carousel-review">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+      <ol class="carousel-indicators">
+        <% @posts.each_with_index do |slide, i| %>
+          <li data-target="#myCarousel" data-slide-to="#{i)" class="<%= 'active' if i == 0 %>"></li>
+        <% end %>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <% @posts.each_with_index do |slide, i| %>
+          <div class="carousel-item <%= 'active' if i == 0 %>">
+            <%= cl_image_tag slide.photos[0].key , class: 'img-medium-review' %>
+          </div>
+        <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only"></span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only"></span>
+      </a>
+    </div>
+  </div>
+
+
+<!-- if more than 6 pcitures  -->
+  <% else %>
+
   <!-- Block with one picture - description -->
 
-  <div class = "description-middle-card-review">
-    <%= cl_image_tag @posts[1].photos[0].key , class: "img-medium-review" %>
-    <div class="text-middle-card-review">
-      <p class="middle-card-name-review"><%= @posts[0].name %></p>
-      <p class="middle-card-description-review"><%= @posts[0].description %></p>
-    </div>
-  </div>
-
-<!-- first block -->
-   <div class="small-card-block-review d-flex justify-content-between mt-4">
-    <!--number 1 -->
-    <div class = "card-review">
-      <%= cl_image_tag @posts[2].photos[0].key , class: "img-small-review1" %>
+    <div class = "description-middle-card-review">
+      <%= link_to trip_post_path(@trip, @posts[1]) do  %>
+        <%= cl_image_tag @posts[1].photos[0].key , class: "img-medium-review" %>
+      <% end %>
+      <div class="text-middle-card-review">
+        <p class="middle-card-name-review"><%= @posts[0].name %></p>
+        <p class="middle-card-description-review"><%= @posts[0].description %></p>
+      </div>
     </div>
 
-    <!-- number 2 -->
-    <div class = "card-review">
-      <%= cl_image_tag @posts[3].photos[0].key , class: "img-small-review2" %>
+    <!-- first block -->
+    <div class="small-card-block-review d-flex justify-content-between mt-4">
+      <!--number 1 -->
+      <div class = "card-review">
+        <%= link_to trip_post_path(@trip, @posts[2]) do  %>
+          <%= cl_image_tag @posts[2].photos[0].key , class: "img-small-review1" %>
+        <% end %>
+      </div>
+
+      <!-- number 2 -->
+      <div class = "card-review">
+        <%= link_to trip_post_path(@trip, @posts[3]) do  %>
+          <%= cl_image_tag @posts[3].photos[0].key , class: "img-small-review2" %>
+        <% end %>
+      </div>
     </div>
-  </div>
 
 
-<!-- |Second block -->
- <div class="small-card-block-review d-flex justify-content-between mt-4">
-    <!--number 3 -->
-    <div class = "card-review">
-      <%= cl_image_tag @posts[4].photos[0].key , class: "img-small-review3" %>
+    <!-- |Second block -->
+    <div class="small-card-block-review d-flex justsify-content-between mt-4">
+      <!--number 3 -->
+      <div class = "card-review">
+        <%= link_to trip_post_path(@trip, @posts[4]) do  %>
+          <%= cl_image_tag @posts[4].photos[0].key , class: "img-small-review3" %>
+        <% end %>
+      </div>
+
+      <!--number 4 -->
+      <div class = "card-review">
+        <%= link_to trip_post_path(@trip, @posts[5]) do  %>
+          <%= cl_image_tag @posts[5].photos[0].key , class: "img-small-review4" %>
+        <% end %>
+      </div>
     </div>
+    <!-- @trip_review_url is defined in controller -->
 
-    <!--number 4 -->
-    <div class = "card-review">
-      <%= cl_image_tag @posts[5].photos[0].key , class: "img-small-review4" %>
-    </div>
-  </div>
-<!-- @trip_review_url is defined in controller -->
 
-  <div class="mapbox-box">
-    <div
+    <!-- Map box  -->
+    <div class="mapbox-box">
+      <div
       id="map-review"
       style="width: 100%;
       height: 200px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    >
-  </div>
-
-  <div class = "end-card-review">
-    <%= cl_image_tag @posts[6].photos[0].key , class: "img-end-review" %>
-    <div class="text-middle-card-review">
+      >
     </div>
+
+    <!--  Carousel  -->
+    <div class="carousel-review">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+        <ol class="carousel-indicators">
+          <% @posts.each_with_index do |slide, i| %>
+            <li data-target="#myCarousel" data-slide-to="#{i)" class="<%= 'active' if i == 0 %>"></li>
+          <% end %>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <% @posts.each_with_index do |slide, i| %>
+            <div class="carousel-item <%= 'active' if i == 0 %>">
+              <%= cl_image_tag slide.photos[0].key , class: 'img-medium-review' %>
+            </div>
+          <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+      </div>
+    </div>
+
+
+    <div class = "end-card-review">
+      <%= link_to trip_post_path(@trip, @posts.last) do  %>
+        <%= cl_image_tag @posts.last.photos[0].key , class: "img-end-review" %>
+      <% end %>
+      <div class="text-middle-card-review">
+      </div>
+    </div>
+
+    <div class="title-review">
+      <h4>The end </h4>
+    </div>
+
+  <% end %>
+
+  <!-- WA Button  -->
+  <div class="btn-review text-align-center">
+        <a href="https://wa.me/?text=<%= @trip_review_url %>"> <i class="fab fa-whatsapp"></i> Share via Whatsapp</a>
   </div>
 
-  <div class= "title-review">
-    The end
-  <div>
 
-  <div class="wa-review">
-    <a href="https://wa.me/?text=<%= @trip_review_url %>">Share via Whatsapp</a>
-  </div>
+<!-- comment area -->
+    <div class="">
+      <div class="comment-logic">
+          <div class="title-review comment-title">Comments</div>
+      </div>
+
+
+      <% @trip.comments.each do |comment| %>
+        <div class="d-flex flex-column flex-end">
+          <div class="d-flex justify-content-between info-comment">
+            <p class="mb-0 comment-name"><%= comment.name %></p>
+            <p class="mb-0 comment-date"><%= comment.created_at.strftime('%d %b %Y') %></p>
+          </div>
+          <p class="comment-description">" <%= comment.comment_description%>"</p>
+        </div>
+      <% end %>
+    </div>
+        <div class="comment-btn">
+        <% if current_user.nil? && current_user != @trip.user %>
+          <%= link_to "Leave a comment", new_trip_comment_path(@trip), class: "btn-review-comment"%>
+        <% end %>
+        </div>
 
 </div>
+
+
 

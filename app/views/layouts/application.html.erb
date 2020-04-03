@@ -1,47 +1,81 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Momento</title>
+    <title>Momento - Share your moments</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/710f69532c.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <%= javascript_include_tag "application" %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+
     <!-- All metas below here are for sharing (fb and whatsapp) -->
     <meta name="description" content="Come checkout Momento! The go-to app to share your trips memories">
     <meta property="og:url" content="https://sharing-the-momento.herokuapp.com/trips/2/review" />
     <meta property="og:title" content="Momento - Share your trip moments">
-    <meta property="og:image:height" content="509">
-    <meta property="og:image:width" content="763">
-    <meta property="og:image" content="https://res.cloudinary.com/dzmacq4yx/image/upload/v1585291198/photo-1498307833015-e7b400441eb8_armuow.jpg">
-    <meta property="og:description" content="Come checkout my trip moments!">
+    <meta property="og:image" content="https://res.cloudinary.com/dzmacq4yx/image/upload/w_1200,h_630/v1585291198/photo-1498307833015-e7b400441eb8_armuow.jpg">
+    <meta property="og:description" content="Come checkout my trip!">
     <meta property="og:site_name" content="Momento"/>
     <meta property="og:type" content="article"/>
   </head>
 
   <body>
     <!-- Start of the navbar -->
-      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-        <a class="navbar-brand-main" href="">
-          <img class="logo "src="https://res.cloudinary.com/dzmacq4yx/image/upload/v1585193799/logo_transparent_xb3nrn.png" alt="">
-        </a>
+    <% unless @no_navbar %>
+      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon nav-bar-here fixed-top">
+          <span class="open-side-bar fas fa-globe-americas"></span>
           <!-- Need to add USER PICTURE HERE -->
-          <img class="avatar-bordered" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+          <% if current_user.nil? %>
+            <img class="avatar-bordered" src="https://pngimage.net/wp-content/uploads/2018/06/no-user-image-png-3.png" />
+          <% elsif !current_user.photo.attached? %>
+            <img class="avatar-bordered" src="https://pngimage.net/wp-content/uploads/2018/06/no-user-image-png-3.png" />
+          <% else %>
+            <% cl_image_tag current_user.photo.key, class: "avatar-bordered" %>
+          <% end %>
       </div>
+    <!-- End of the navbar -->
 
+    <div id="mySidenav" class="sidenav">
+      <span class="closebtn"> Momento <i class="fas fa-globe-americas"></i> </span>
+      <% unless current_user.nil? %>
+        <%= link_to trips_path do %>
+          Home
+        <% end %>
+        <%= link_to trip_path(current_user) do %>
+          Profile
+        <% end %>
+        <%= link_to new_trip_post_path(current_user) do %>
+          Current Trip
+        <% end %>
+        <%= link_to trip_trip_path(current_user) do %>
+          Last Trip Review
+        <% end %>
+         <%= link_to trips_path do %>
+          Past Trips
+        <% end %>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          Log out
+        <% end %>
+      <% end %>
+    </div>
+
+    <% end %>
       <!-- End of the navbar -->
 
 
-
-    <% unless @no_container %>
-      <div class="main-body">
-        <%= yield %>
-      </div>
-    <% else %>
-      <%= yield %>
-    <% end %>
+    <div class="navbar-push">
+      <% unless @no_container %>
+        <div class="main-body">
+          <%= yield %>
+        </div>
+        <% else %>
+          <%= yield %>
+        <% end %>
+    </div>
 <!--      <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p> -->
      <!-- from app/assets/javascripts/application.js -->

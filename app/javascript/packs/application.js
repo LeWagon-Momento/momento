@@ -14,7 +14,9 @@
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+// This is for the popup alert
 
+import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 import { initMapbox } from '../plugins/init_mapbox';
 import { initPostShowMapbox } from '../plugins/init_mapbox_postshow'; // Kenn's mapbox
@@ -26,7 +28,15 @@ import { initPostMapbox } from '../plugins/post_mapbox';
 import { initReviewMapbox } from '../plugins/review_mapbox';
 import '../plugins/draggable.js'
 import { wikiApi } from '../plugins/wiki_api';
+import { toggleNav } from '../plugins/side_bar';
+import { closeNav } from '../plugins/side_bar';
+import { loginModal } from '../plugins/init_login_modal';
+import { initPopUpBox } from '../plugins/init_popup';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 
+
+toggleNav();
+closeNav();
 initMapbox();
 initPostShowMapbox();
 initTimeline();
@@ -36,3 +46,6 @@ readURL();
 initPostMapbox();
 wikiApi();
 initReviewMapbox();
+loginModal();
+initPopUpBox();
+initAutocomplete();

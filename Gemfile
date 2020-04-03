@@ -26,7 +26,9 @@ gem 'geocoder'
 gem 'pry'
 gem 'ngrok'
 gem 'jquery-rails'
-
+gem 'non-stupid-digest-assets'
+gem 'sweet-alert2-rails'
+gem 'omniauth-facebook'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

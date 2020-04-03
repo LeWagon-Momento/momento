@@ -173,7 +173,7 @@
       <% end %>
     </div>
         <div class="comment-btn">
-        <% if current_user.nil? %>
+        <% if current_user.nil? && current_user != @trip.user %>
           <%= link_to "Leave a comment", new_trip_comment_path(@trip), class: "btn-review-comment"%>
         <% end %>
         </div>

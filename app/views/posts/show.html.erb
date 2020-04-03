@@ -1,3 +1,9 @@
+<div class="header fixed-top">
+  <%= link_to trip_path(@trip) do %>
+    <p class="back-buton"><i class="fas fa-arrow-left"></i></p>
+  <% end %>
+</div>
+
 <div id="image-one-full">
   <%= cl_image_tag @post.photos[0].key, class: "post-image" %>
   <!-- <img id="no-image" src="https://semantic-ui.com/images/wireframe/image.png" alt="" width="100%" > -->
@@ -37,3 +43,4 @@
 ></div>
 
 <% @no_container = true %>
+<% @no_navbar = true %>

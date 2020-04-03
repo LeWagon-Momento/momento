@@ -3,13 +3,7 @@ class TripsController < ApplicationController
   before_action :trip_find, only: [:show, :edit, :update, :destroy]
 
   def index
-    @trips = []
-    Trip.all.each do |trip|
-      unless trip.end_date.nil? && trip.user != current_user
-        @trips << trip
-      end
-    end
-    @trips
+    @trips = current_user.trips
 
     # checking user's location
     @current_location = request.location
@@ -22,7 +16,6 @@ class TripsController < ApplicationController
         format.html
         format.js
       end
-
     # end
   end
 

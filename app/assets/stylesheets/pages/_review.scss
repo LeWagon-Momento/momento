@@ -167,7 +167,6 @@
     font-size: 14px;
     font-color: #06908F;
     color: #06908F;
-    display: table-cell;
 }
 
 .btn-review{
@@ -197,7 +196,10 @@ font-size:12px;
   color:#5c5350;
 }
 .comment-btn{
-text-align:center;
+  margin:0 auto;
+  width:200px;
+  text-align:center;
+  border-bottom: 1px solid $orange;
 }
 
 .info-comment{

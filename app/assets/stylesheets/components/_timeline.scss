@@ -1,11 +1,19 @@
 // timeline post name
-
+.home-heading-timeline{
+  border-bottom: 1px solid #FBBA72;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 22px;
+  margin-right:44px;
+  font-family: "Roboto", "sans-serif ";
+  margin-bottom:14px;
+}
 .post-name {
   position: relative;
   left: 114px;
   top: -16px;
-  font-size: 20px;
-  width: 161px;
+  font-size: 16px;
+  width: 50%;
   text-align: center;
   font-style: italic;
   color: $gray;
@@ -107,7 +115,7 @@ header {
 
 .timeline-item {
   width: 100%;
-  margin-bottom: 70px;
+  margin-bottom: 10px;
 
   &:nth-child(even) {
 

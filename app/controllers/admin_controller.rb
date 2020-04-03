@@ -1,11 +1,11 @@
 class AdminController < ApplicationController
   def index
-    if current_user.admin? # this is how i think admin trips controller verify if user is admin
-      @trips = Trip.all # after that you keep as many trips as you want to do testing
-      @users = User.all
-      @userlogin = Userlogin.all
+    if current_user.admin? # checking if user has admin status
+      @trips = Trip.all # allowing admin access to all trips
+      @users = User.all # allowing admin access to all users
+      @userlogin = Userlogin.all # allowing admin access to get all user login data
     else
-      redirect_to user_session_path(@user) # unsure if this is correct or how is this working
+      redirect_to user_session_path(@user)
     end
   end
 end

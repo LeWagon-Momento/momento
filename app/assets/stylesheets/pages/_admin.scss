@@ -1,16 +1,12 @@
 .headers {
-  font-size: 15px;
+  font-size: 15px; // h1 headings
 }
 
 .card {
-  margin: 1.25px;
-  border-radius: 13px;
+  margin: 1.25px; // put spacing between the cards
+  border-radius: 13px; // smoothen out corners of the cards
 }
 
 .dashboard-item {
-  // display:flex;
-  // justify-content: center;
-  // align-items: center;
-  font-size: 140px;
-  // font-size: 40px;
+  font-size: 140px; // huge numberings on top 2 items of dashboard
 }

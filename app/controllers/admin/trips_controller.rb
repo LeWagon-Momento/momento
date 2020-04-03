@@ -1,9 +1,9 @@
 class Admin::TripsController < ApplicationController
-  def index # THIS WILL SHOW ME ALL TRIPS NOT DASHBOARD FOR EVERYTHING
-    if current_user.admin? # this is how i think admin trips controller verify if user is admin
-     @trips = Trip.all # not sure if this is the logic i am suppose to put but it makes sen because this is where i want to see ALL my trips and only trips
+  def index # THIS WILL SHOW ALL TRIPS NOT DASHBOARD FOR ADMIN PANEL
+    if current_user.admin? # check if user if traveler or admin
+     @trips = Trip.all # access all trips in database
     else
-      redirect_to user_session_path(@user) # unsure if this is correct or how is this working
+      redirect_to user_session_path(@user) # back to normal user access right
     end
   end
 
@@ -23,10 +23,9 @@ class Admin::TripsController < ApplicationController
     redirect_to admin_trips_path
   end
 
-  private # why do i need to implement private for?
+  private #
 
   def trip_params
-    params.require(:trip).permit(:name, :description, :start_date, :end_date) # white list happnes here
+    params.require(:trip).permit(:name, :description, :start_date, :end_date) # whitelisting of my trips
   end
 end
-

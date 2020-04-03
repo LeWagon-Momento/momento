@@ -128,13 +128,14 @@
   object-fit: cover;
   background-repeat: no-repeat;
   background-position: center;
+  filter: brightness(75%);
 }
 
 .flex-header-absolute {
   width: 57%;
   position: absolute;
   top: 20px;
-  right: 318px;
+  right: 343px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -150,7 +151,7 @@
   width: 50%;
   position: absolute;
   top: 85px;
-  right: 341px;
+  right: 371px;
   text-shadow: 0px 0px 4px rgba(0,0,0,0.5);
 
 }

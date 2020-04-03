@@ -1,5 +1,9 @@
 <% @no_container = true %>
-
+<% @no_navbar = true %>
+<% unless current_user.nil? %>
+  <div class="margin-spacing-top"></div>
+  <% @no_navbar = false %>
+<% end %>
 
 <div class="container-review">
 
@@ -173,7 +177,9 @@
       <% end %>
     </div>
         <div class="comment-btn">
-        <% if current_user.nil? && current_user != @trip.user %>
+        <% if current_user.nil? %>
+          <%= link_to "Leave a comment", new_trip_comment_path(@trip), class: "btn-review-comment"%>
+        <% elsif current_user != @trip.user %>
           <%= link_to "Leave a comment", new_trip_comment_path(@trip), class: "btn-review-comment"%>
         <% end %>
         </div>

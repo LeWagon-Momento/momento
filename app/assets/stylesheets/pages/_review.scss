@@ -133,9 +133,13 @@
 // HS here added margin-top because of sticky navbar which covers the header
 .container-review{
   margin: 30px;
-  margin-top: 70px;
   // background-color: white;
 }
+
+.margin-spacing-top {
+  margin-top: 70px;
+}
+
 .small-card-block-review{
   justify-content:space-between;
 }

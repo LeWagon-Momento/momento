@@ -16,7 +16,6 @@ class TripsController < ApplicationController
         format.html
         format.js
       end
-      raise
     # end
   end
 

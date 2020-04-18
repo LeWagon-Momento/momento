@@ -1,0 +1,21 @@
+<!-- EDIT FORM -->
+<h1>EDIT USERS</h1>
+
+<%=  simple_form_for(@user, url: edit_admin_user) do |f| %>
+  <%= f.label :id %>
+  <%= f.text_field :id %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :country %>
+  <%= f.text_field :country %>
+
+  <%= f.label :uploads %>
+  <%= f.text_field :last_seven_days_post.count %>
+
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,27 @@
+<h1>EDIT TRIPS </h1>
+
+
+
+<%= simple_form_for(@trip, url: admin_trip_path) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :start_date %>
+  <%= f.text_field :start_date %>
+
+  <%= f.label :end_date %>
+  <%= f.text_field :end_date %>
+
+  <%= f.submit %> <!-- i want to link this to my link_to update button -->
+<% end %>
+
+<button type="button" class="btn btn-success">
+  <%= link_to "Delete", admin_trip_path(@trip),
+  method: :delete,
+  data: { confirm: "Are you sure?" } %>
+</button>
+
+

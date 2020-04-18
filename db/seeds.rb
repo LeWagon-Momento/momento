@@ -26,7 +26,7 @@ cb = Country.create(name: "Cambodia")
 
 #Seeding Users
 max = User.new(email: "max@gmail.com", password: "123456", name: "Max")
-dexter = User.new(email: "dexter@gmail.com", password: "123456", name: "Dexter")
+dexter = User.new(email: "dexter@gmail.com", password: "123456", name: "Dexter", admin: true)
 kenn = User.new(email: "kenn@gmail.com", password: "123456", name: "Kenn")
 
 #Association User + country
@@ -36,6 +36,66 @@ kenn.country = singapore
 max.save
 dexter.save
 kenn.save
+
+#Creating first Trip
+
+first_trip = Trip.new(name: "Cambobia",
+                          description: "Siem Reap, Temple with Franck and Olivia",
+                          start_date: "2 november 2018",
+                          end_date: "10 november 2018",
+                          )
+
+
+first_trip.user = max
+first_trip.save
+
+#Creating first Trip
+
+first_trip = Trip.new(name: "Cambobia",
+                          description: "Siem Reap, Temple with Franck and Olivia",
+                          start_date: "2 november 2018",
+                          end_date: "10 november 2018",
+                          )
+
+
+first_trip.user = max
+first_trip.save
+
+#Creating first Trip
+
+first_trip = Trip.new(name: "Cambobia",
+                          description: "Siem Reap, Temple with Franck and Olivia",
+                          start_date: "2 november 2018",
+                          end_date: "10 november 2018",
+                          )
+
+
+first_trip.user = max
+first_trip.save
+
+#Creating first Trip
+
+first_trip = Trip.new(name: "Cambobia",
+                          description: "Siem Reap, Temple with Franck and Olivia",
+                          start_date: "2 november 2018",
+                          end_date: "10 november 2018",
+                          )
+
+
+first_trip.user = max
+first_trip.save
+
+#Creating first Trip
+
+first_trip = Trip.new(name: "Cambobia",
+                          description: "Siem Reap, Temple with Franck and Olivia",
+                          start_date: "2 november 2018",
+                          end_date: "10 november 2018",
+                          )
+
+
+first_trip.user = max
+first_trip.save
 
 #Creating first Trip
 

@@ -1,0 +1,24 @@
+<h1>User Profiles</h1>
+<%  @users.each do |user| %>
+<div class="card">
+  <div class="card-body">
+   <h2>ID: <%= user.id %></h2>
+   <h2> name: <%= user.name %> </h2>
+   <p>email: <%= user.email %></p>
+   <p>country: <%= user.country.name %></p>
+   <p>uploads: <%= user.last_seven_days_post.count %></p>
+   <p>log in sessions: <%= @userlogin.count %></p>
+ </div>
+ <button type="button" class="btn btn-primary"> <!-- delete button -->
+   <%= link_to "Delete", admin_user_path(@users) ,
+   method: :delete,
+   data: { confirm: "you really sure?" } %>
+ </button>
+</div>
+
+<div> <!-- edit button -->
+  <button type="button" class="btn btn-secondary">
+    <%= link_to "Edit", edit_admin_user_path(@users) , method: :get %>
+  </button>
+</div>
+<%  end %>

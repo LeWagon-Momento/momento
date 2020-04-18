@@ -5,9 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   devise :omniauthable, omniauth_providers: [:facebook]
   has_many :trips, dependent: :destroy
+  has_many :posts, through: :trips #  added in for tracking upload metrics
+  has_many :userlogins
+  belongs_to :country
+  has_one_attached :photo # this is important in doing the photo feature
   belongs_to :city
   has_one_attached :photo
-
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice("provider", "uid")
     user_params.merge! auth.info.slice("email", "first_name", "last_name")
@@ -26,5 +29,14 @@ class User < ApplicationRecord
       user.save
     end
     return user
+    
+     def last_seven_days_post # for upload metric count feature
+    posts.select do |post|
+      post.created_at > (Date.today - 7)
+    end
+    
+    def admin?
+    admin == true
+  end
   end
 end

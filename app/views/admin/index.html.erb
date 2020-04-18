@@ -1,0 +1,53 @@
+
+
+
+<div class="container">
+  <h1 class="text-center">DASHBOARD</h1>
+  <div class="row"> <!-- first row of 2 items in dashboard -->
+    <div class="column">
+      <div class="card " style="width: 10rem; height: 20rem;"> <!-- TRIP SECTION -->
+        <div class="card-body">
+          <h2 class="headers">ALL TRIPS</h2>
+          <div class="dashboard-item">
+            <p class="text-center" ><%= Trip.count %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="card" style="width: 10rem; height: 20rem;"> <!-- PROFILE SECTION -->
+        <div class="card-body">
+          <h2 class="headers">USERS </h2>
+          <div class="dashboard-item">
+            <p class="text-center" ><%= User.count %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <div class="card" style="width: 10rem; height: 20rem;"> <!-- PHOTOS -->
+        <div class="card-body">
+          <h2 class="headers" >PHOTOS</h2>
+          <p style="margin-top: 30%;">recent: 30 <meter id="bar" value = "30" max = "100"/> </p>
+          <p >Total: 90</p>
+          <meter id="bar" value = "80" max = "100"/>
+        </div>
+      </div>
+    </div> <!-- PHOTOS -->
+
+    <div class="column">
+      <div class="card" style="width: 10rem; height: 20rem;"> <!-- METRICS -->
+        <div class="card-body">
+          <h1 class="headers">METRICS</h1>
+          <p style="margin-top: 30%;"> total log in: <%= Userlogin.count %> <meter id="bar" value = <%= Userlogin.count %> max = "250"/> </p> <!-- linking of the value with Userlogin.count -->
+            <p>sessions: 481</p>
+            <meter id="bar" value = "80" max = "100"/>
+          </div>
+        </div>
+      </div> <!-- METRICS -->
+   </div>
+</div>

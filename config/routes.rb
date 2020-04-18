@@ -11,5 +11,11 @@ Rails.application.routes.draw do
     resources :posts
     resources :comments, only: [:new, :create]
   end
+    get 'admin/', to: 'admin#index' # ADMIN OVERALL INDEX
+  namespace :admin do
+    resources :trips, only: [:index, :edit, :update, :destroy]
+    resources :users, only: [:index, :edit, :update, :destroy]
+
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

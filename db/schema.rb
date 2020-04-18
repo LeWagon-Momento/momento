@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_04_02_043014) do
 
   # These are extensions that must be enabled in order to support this database
@@ -78,6 +79,16 @@ ActiveRecord::Schema.define(version: 2020_04_02_043014) do
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
+  create_table "userlogins", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.string "remote_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_userlogins_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -87,6 +98,9 @@ ActiveRecord::Schema.define(version: 2020_04_02_043014) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "country_id"
+    t.boolean "admin", default: false, null: false
+    t.index ["country_id"], name: "index_users_on_country_id"
     t.bigint "city_id"
     t.string "provider"
     t.string "uid"
@@ -104,5 +118,8 @@ ActiveRecord::Schema.define(version: 2020_04_02_043014) do
   add_foreign_key "comments", "trips"
   add_foreign_key "posts", "trips"
   add_foreign_key "trips", "users"
+  add_foreign_key "userlogins", "users"
+  add_foreign_key "users", "countries"
   add_foreign_key "users", "cities"
+
 end

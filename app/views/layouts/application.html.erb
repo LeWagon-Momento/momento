@@ -30,11 +30,11 @@
           <span class="open-side-bar fas fa-globe-americas"></span>
           <!-- Need to add USER PICTURE HERE -->
           <% if current_user.nil? %>
-            <img class="avatar-bordered" src="https://res.cloudinary.com/dzmacq4yx/image/upload/v1585711392/J1GgUehxZCLs41WjeMWM4Rv2.jpg" />
+            <img class="avatar-bordered" src="https://res.cloudinary.com/dzmacq4yx/image/upload/v1593930261/default_avatar-ea7cf6abde4eec089a4e03cc925d0e893e428b2b6971b12405a9b118c837eaa2_rpnilw.png" />
           <% elsif !current_user.facebook_picture_url.nil? %>
             <img class="avatar-bordered" src="<%= current_user.facebook_picture_url %>" />
           <% elsif !current_user.photo.attached? %>
-            <img class="avatar-bordered" src="https://res.cloudinary.com/dzmacq4yx/image/upload/v1585711392/J1GgUehxZCLs41WjeMWM4Rv2.jpg" />
+            <img class="avatar-bordered" src="https://res.cloudinary.com/dzmacq4yx/image/upload/v1593930261/default_avatar-ea7cf6abde4eec089a4e03cc925d0e893e428b2b6971b12405a9b118c837eaa2_rpnilw.png" />
           <% else %>
             <% cl_image_tag current_user.photo.key, class: "avatar-bordered" %>
           <% end %>

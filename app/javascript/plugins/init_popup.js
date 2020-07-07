@@ -22,7 +22,7 @@ const initPopUpBox = () => {
       // confirmButtonColor: 'button-small',
       // reverseButtons: true,
       // cancelButtonColor: '#d33',
-      confirmButtonText: 'Start !'
+      confirmButtonText: 'Start!'
       }).then((result) => {
         if (result.value) {
           window.location = '/trips/new'

@@ -2,13 +2,17 @@
   width: 40px;
   border-radius: 50%;
 }
+
 .avatar-large { // this is the avatar in the profile page info
   width: 150px;
   border-radius: 50%;
-  position: relative; // allows picture to move around
-  bottom: 125px; // moves picture to be in the middle of cover picture
-  left: 113px;
+  position: absolute; // allows picture to move around
+  bottom: 185px; // moves picture to be in the middle of cover picture
+  left: 880px;
+  border: solid;
+  border-color: $main-color;
 }
+
 .avatar-bordered {
   width: 40px;
   border-radius: 50%;
@@ -22,4 +26,16 @@
 
 .avatar-bordered:hover{
   border-color:$yellow;
+}
+
+@media(max-width: 768px) {
+  .avatar-large { // this is the avatar in the profile page info
+    width: 200px;
+    border-radius: 50%;
+    position: absolute; // allows picture to move around
+    bottom: 320px; // moves picture to be in the middle of cover picture
+    left: 99px;
+    border: solid;
+    border-color: $main-color;
+  }
 }

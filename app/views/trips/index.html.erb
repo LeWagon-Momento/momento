@@ -1,36 +1,44 @@
-<div class="home-heading text-center mt-3">
-Explore the world
+<!-- Overall div for trips index -->
+<div class="d-flex flex-row">
+  <!-- This is all trips on the left column-->
+  <div class="d-flex flex-column w-100 mr-auto">
+    <div class="home-heading text-center mt-3">
+    Explore the world
+    </div>
+
+    <% @trips.each do |trip| %>
+      <%= link_to trip_path(trip) do %>
+        <div class="card-trip mt-4" >
+          <% if trip.posts.empty? %>
+            <img src="https://res.cloudinary.com/dzmacq4yx/image/upload/v1594288157/no-image-1_li83kj.jpg" class="card-trip" />
+          <% elsif trip.posts.first.photos.empty?%>
+            <img src="https://res.cloudinary.com/dzmacq4yx/image/upload/v1594288157/no-image-1_li83kj.jpg" class="card-trip" />
+          <% else %>
+            <%= cl_image_tag trip.posts.first.photos[0].key, class: "card-trip"%>
+          <% end %>
+          <div class="card-body d-flex justify-content-between">
+            <h3><%= trip.name %></h3>
+            <p><%= trip.start_date.strftime('%B %Y') %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <!-- This is the friends list on the right column -->
+
+  <div class="d-flex flex-column flex-shrink-0">
+    <p>Friend 1</p>
+    <p>Friend 2 dssda dsa   dsa </p>
+    <p>Friend 3</p>
+  </div>
 </div>
 
+
+
+<!-- Javascript to detect if user is in current city and if there is no existing trip -->
 <%= javascript_tag do %>
   currentCity = '<%= j @current_location.city %>';
   userCity = '<%= j current_user.city.name %>';
   noTrips = '<%= j @users_active_trips %>';
 <% end %>
-
-<% @trips.each do |trip| %>
-  <%= link_to trip_path(trip) do %>
-    <div class="card-trip mt-4" >
-      <% if trip.posts.empty? %>
-        <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" class="card-trip" />
-      <% elsif trip.posts.first.photos.empty?%>
-        <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" class="card-trip" />
-      <% else %>
-        <%= cl_image_tag trip.posts.first.photos[0].key, class: "card-trip"%>
-      <% end %>
-      <div class="card-body d-flex justify-content-between">
-        <h3><%= trip.name %></h3>
-        <p><%= trip.start_date.strftime('%B %Y') %></p>
-      </div>
-    </div>
-  <% end %>
-<% end %>
-
-
-<!-- <div class="btn button-large draggable"> Hello </div>
-
-
-<div class="btn button-small">Click</div> -->
-
-
-

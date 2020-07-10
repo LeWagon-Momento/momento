@@ -29,6 +29,7 @@ class PostsController < ApplicationController
     @post = Post.new(params_posts)
     @trip = Trip.find(params[:trip_id])
     @post.trip = @trip
+    binding.pry
     respond_to do |format|
       if @post.save
         format.html { redirect_to trip_path(@trip) }

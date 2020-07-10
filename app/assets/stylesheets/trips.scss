@@ -2,15 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.friend-column {
-  font-weight: bold;
+.friend-row {
+  font-weight: light;
   padding: 10px;
+  font-size: 14px;
+  margin-left: 5px;
 }
 
 .friend-list-header {
-
+  font-weight: bold;
+  font-size: 20px;
 }
 
-.no-right-margin {
-  margin-right: 0px !important;
+.friend-list {
+  display: flex-column;
+  width: 35%;
+  position: sticky;
+  padding: 0px 10px;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.friends {
+  overflow-y: auto;
+  height: 70vh;
+}
+
+.trips-container {
+  display: flex;
+}
+
+.all-trips {
+  overflow-y: auto;
+  display: flex-column;
 }

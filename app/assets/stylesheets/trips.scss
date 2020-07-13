@@ -4,9 +4,11 @@
 
 .friend-row {
   font-weight: light;
-  padding: 10px;
+  padding: 0px 10px 0px 0px;
   font-size: 14px;
-  margin-left: 5px;
+  margin-left: 1%;
+  display: flex;
+  margin-top: 1%;
 }
 
 .friend-list-header {
@@ -19,8 +21,8 @@
   width: 35%;
   position: sticky;
   padding: 0px 10px;
-  margin-left: 15px;
-  margin-top: 15px;
+  margin-left: 1%;
+  margin-top: 1%;
 }
 
 .friends {
@@ -34,5 +36,12 @@
 
 .all-trips {
   overflow-y: auto;
+  width: 100%;
   display: flex-column;
+}
+
+.trip {
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
 }

@@ -24,9 +24,9 @@
   border: $light-color 1px solid;
 }
 
-.avatar-bordered:hover{
-  border-color:$yellow;
-}
+// .avatar-bordered:hover{
+//   border-color:$yellow;
+// }
 
 @media(max-width: 768px) {
   .avatar-large { // this is the avatar in the profile page info

@@ -17,6 +17,7 @@ class TripsController < ApplicationController
         format.js
       end
     # end
+
   end
 
   def show

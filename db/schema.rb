@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_07_054815) do
+ActiveRecord::Schema.define(version: 2020_07_19_053621) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,11 +53,14 @@ ActiveRecord::Schema.define(version: 2020_07_07_054815) do
     t.index ["trip_id"], name: "index_comments_on_trip_id"
   end
 
-  create_table "friends", force: :cascade do |t|
+  create_table "friendships", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "friend_id"
+    t.boolean "confirmed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_friends_on_user_id"
+    t.index ["friend_id"], name: "index_friendships_on_friend_id"
+    t.index ["user_id"], name: "index_friendships_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -109,7 +112,8 @@ ActiveRecord::Schema.define(version: 2020_07_07_054815) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "trips"
-  add_foreign_key "friends", "users"
+  add_foreign_key "friendships", "users"
+  add_foreign_key "friendships", "users", column: "friend_id"
   add_foreign_key "posts", "trips"
   add_foreign_key "trips", "users"
   add_foreign_key "users", "cities"

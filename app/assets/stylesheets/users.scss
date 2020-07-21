@@ -2,7 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.avatar-large { // this is the avatar in the profile page info
+  width: 150px;
+  border-radius: 50%;
+  position: absolute; // allows picture to move around
+  bottom: 510px; // moves picture to be in the middle of cover picture
+  left: 880px;
+  border: solid;
+  border-color: $main-color;
+}
 
 
 @media(max-width: 768px) {

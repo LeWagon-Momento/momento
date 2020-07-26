@@ -1,23 +1,26 @@
  <div class="user-profile">
-  <%= image_tag 'banner-picture.png', class: 'banner' %> <!-- COVERPICTURE ON OUTSIDE BECAUSE BASED ON FIGMA IT IS AFTER NAV BAR-->
-  <!-- User's avatar -->
-  <% if !current_user.photo.attached? %>
-    <img class="avatar-large" src="https://res.cloudinary.com/dzmacq4yx/image/upload/v1593930261/default_avatar-ea7cf6abde4eec089a4e03cc925d0e893e428b2b6971b12405a9b118c837eaa2_rpnilw.png" />
-  <% else %>
-    <% cl_image_tag current_user.photo.key, class: "avatar-large" %>
-  <% end %>
+  <!-- Avatar, name and city location -->
+  <div class="avatar-name-city">
+    <!-- User's avatar -->
+    <% if !current_user.photo.attached? %>
+      <img class="avatar-large" src="https://res.cloudinary.com/dzmacq4yx/image/upload/v1593930261/default_avatar-ea7cf6abde4eec089a4e03cc925d0e893e428b2b6971b12405a9b118c837eaa2_rpnilw.png" />
+    <% else %>
+      <% cl_image_tag current_user.photo.key, class: "avatar-large" %>
+    <% end %>
 
-  <!-- User's name -->
-  <p class="profile-name" ><%= @user.name.capitalize %></p>
+    <!-- User's name -->
+    <div class="name-city">
+      <div class="profile-name" ><%= @user.name.capitalize %></div>
+      <!-- User's city -->
+      <div class="profile-city"><%= @user.city.name %></div>
+    </div>
+  </div>
 
   <div class="profile-box">
-    <!-- User's City Name -->
+    <!-- User's Information -->
     <h2 class="profile-text-header">Email:</h2>
     <p class="profile-text-field"><%= @user.email %></p>
 
-    <!-- User's Email -->
-    <h2 class="profile-text-header">Living in:</h2>
-    <p class="profile-text-field"><%= @user.city.name %></p>
   </div>
  </div>
 

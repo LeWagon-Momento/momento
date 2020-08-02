@@ -33,6 +33,27 @@
   font-style: italic;
 }
 
+.profile-box {
+  display: grid;
+}
+
+.profile-text-field {
+  font-size: 15px;
+  text-align: center;
+  background-color: #F8F8F8;
+  width: 300px;
+  padding: 8px 0px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #E8E8E8;
+  border-radius: 5px;
+}
+
+.profile-text-header {
+  font-size: 15px;
+  // font-style: bold;
+}
+
 @media(max-width: 768px) {
   .user-profile {
 

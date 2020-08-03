@@ -2,18 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.friend-row :hover {
-  cursor: pointer;
-  background-color: #F5F5F5;
-  z-index: 1;
-}
-
 .friend-row {
-  border-radius: 10px;
   display: flex;
+  border-radius: 10px;
   margin-top: 4%;
   padding: 2%;
   margin-right: 3%;
+}
+
+.friend-row :hover {
+  cursor: pointer;
+  background-color: #F5F5F5;
 }
 
 .friend-list-header {
@@ -30,7 +29,7 @@
 
 .friends {
   overflow-y: auto;
-  height: 70vh;
+  height: 50vh;
 }
 
 .trips-container {

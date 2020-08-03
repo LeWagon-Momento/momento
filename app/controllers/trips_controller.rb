@@ -4,6 +4,7 @@ class TripsController < ApplicationController
 
   def index
     @friends = current_user.friends
+    @friendsrequests = current_user.friend_requests
     @trips = current_user.trips
 
     # checking user's location

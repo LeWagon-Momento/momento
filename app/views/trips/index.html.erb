@@ -28,28 +28,32 @@
   <!-- This is the list on the right column -->
   <div class="friend-list">
     <!-- This is the confirmed friends list -->
-    <div class="friend-list-header">Friend List</div>
-      <% @friends.each do |friend| %>
-        <div class="friends">
-          <%= link_to user_path(friend[:id]), :class => "friend-row" do %>
-            <div class="friend-row">
-              <img class="avatar-friend" src="https://res.cloudinary.com/dzmacq4yx/image/upload/v1593930261/default_avatar-ea7cf6abde4eec089a4e03cc925d0e893e428b2b6971b12405a9b118c837eaa2_rpnilw.png"/>
-                <div class="friend-name"><%= friend.name %></div>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
+    <div>
+      <div class="friend-list-header">Friend List</div>
+        <% @friends.each do |friend| %>
+          <div class="friends">
+            <%= link_to user_path(friend[:id]), class: "friend-row" do %>
+              <div class="friend-row">
+                <img class="avatar-friend" src="https://res.cloudinary.com/dzmacq4yx/image/upload/v1593930261/default_avatar-ea7cf6abde4eec089a4e03cc925d0e893e428b2b6971b12405a9b118c837eaa2_rpnilw.png"/>
+                  <div class="friend-name"><%= friend.name %></div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+    </div>
 
     <!-- Friends Request List -->
-    <div class="friend-list-header">Friend Requests</div>
-      <% @friendsrequests.each do |request| %>
-        <div class="friends">
-          <div class="friend-row">
-            <img class="avatar-friend" src="https://res.cloudinary.com/dzmacq4yx/image/upload/v1593930261/default_avatar-ea7cf6abde4eec089a4e03cc925d0e893e428b2b6971b12405a9b118c837eaa2_rpnilw.png"/>
-              <div class="friend-name"><%= request.name %></div>
+    <div>
+      <div class="friend-list-header">Friend Requests</div>
+        <% @friendsrequests.each do |request| %>
+          <div class="friends">
+            <div class="friend-row">
+              <img class="avatar-friend" src="https://res.cloudinary.com/dzmacq4yx/image/upload/v1593930261/default_avatar-ea7cf6abde4eec089a4e03cc925d0e893e428b2b6971b12405a9b118c837eaa2_rpnilw.png"/>
+                <div class="friend-name"><%= request.name %></div>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
 
   </div>

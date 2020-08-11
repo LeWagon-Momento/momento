@@ -5,9 +5,15 @@
 .friend-row {
   display: flex;
   border-radius: 10px;
-  margin-top: 4%;
+  // margin-top: 4%;
   padding: 2%;
-  margin-right: 3%;
+  // margin-right: 3%;
+  width: 98%;
+  color: #606060;
+}
+
+.friend-row-flex {
+
 }
 
 .friend-row :hover {

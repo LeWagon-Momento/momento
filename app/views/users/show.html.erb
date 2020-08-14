@@ -15,12 +15,19 @@
       <div class="profile-city"><%= @user.city.name %></div>
     </div>
   </div>
-
+  <!-- User's Information -->
   <div class="profile-box">
-    <!-- User's Information -->
-    <h2 class="profile-text-header">Email</h2>
-    <p class="profile-text-field"><%= @user.email %></p>
-    <%= @user.friends %>
+    <!-- User Name -->
+    <div>
+      <h2 class="profile-text-header">Name</h2>
+      <p class="profile-text-field"><%= @user.name %></p>
+    </div>
+    <!-- User's Email  -->
+    <div>
+      <h2 class="profile-text-header">Email</h2>
+      <p class="profile-text-field"><%= @user.email %></p>
+    </div>
   </div>
  </div>
 
+  <%= @user.friends %>

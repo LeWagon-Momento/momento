@@ -6,19 +6,17 @@
   display: flex;
   border-radius: 10px;
   // margin-top: 4%;
-  padding: 2%;
+  padding: 2.5%;
   // margin-right: 3%;
   width: 98%;
   color: #606060;
+  align-items: center;
 }
 
-.friend-row-flex {
-
-}
-
-.friend-row :hover {
+.friend-row:hover {
   cursor: pointer;
   background-color: #F5F5F5;
+  color: #606060;
 }
 
 .friend-list-header {
@@ -27,7 +25,7 @@
 }
 
 .friend-list {
-  display: flex-column;
+  display: block;
   width: 20%;
   position: sticky;
   margin-top: 0.75%;
@@ -35,7 +33,6 @@
 
 .friends {
   overflow-y: auto;
-  height: 50vh;
 }
 
 .trips-container {

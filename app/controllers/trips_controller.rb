@@ -3,6 +3,8 @@ class TripsController < ApplicationController
   before_action :trip_find, only: [:show, :edit, :update, :destroy]
 
   def index
+    @friends = current_user.friends
+    @friendsrequests = current_user.friend_requests
     @trips = current_user.trips
 
     # checking user's location
@@ -17,6 +19,7 @@ class TripsController < ApplicationController
         format.js
       end
     # end
+    # @friendslist = User.friends
   end
 
   def show
@@ -50,7 +53,6 @@ class TripsController < ApplicationController
     @trip.end_date = Date.today
     @trip.save
     @trip_review_url = "https://sharing-the-momento.herokuapp.com/trips/#{@trip.id}/review"
-
 
     @posts = @trip.posts
 

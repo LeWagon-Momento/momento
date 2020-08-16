@@ -2,7 +2,7 @@
 .home-heading-timeline{
   border-bottom: 1px solid #FBBA72;
   width: 50%;
-  margin: 0 auto;
+  margin: 0px 25%;
   font-size: 22px;
   margin-right:44px;
   font-family: "Roboto", "sans-serif ";
@@ -109,6 +109,7 @@ header {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    top: 5%;
   }
 }
 
@@ -129,23 +130,23 @@ header {
       }
 
       &::after {
-        content: '';
-        position: absolute;
-        border-style: solid;
-        width: 0;
-        height: 0;
-        top: 30px;
-        left: -15px;
-        // border-width: 10px 15px 10px 0;
-        border-color: transparent #f5f5f5 transparent transparent;
+        // content: '';
+        // position: absolute;
+        // border-style: solid;
+        // width: 0;
+        // height: 0;
+        // top: 30px;
+        // left: -15px;
+        // // border-width: 10px 15px 10px 0;
+        // border-color: transparent #f5f5f5 transparent transparent;
       }
     }
   }
 
   &::after {
-    content: '';
-    display: block;
-    clear: both;
+    // content: '';
+    // display: block;
+    // clear: both;
   }
 }
 
@@ -159,15 +160,15 @@ header {
 
 
   &::after {
-    content: '';
-    position: absolute;
-    border-style: solid;
-    width: 0;
-    height: 0;
-    top: 30px;
-    right: -15px;
-    border-width: 10px 0 10px 15px;
-    border-color: transparent transparent transparent #f5f5f5;
+    // content: '';
+    // position: absolute;
+    // border-style: solid;
+    // width: 0;
+    // height: 0;
+    // top: 30px;
+    // right: -15px;
+    // border-width: 10px 0 10px 15px;
+    // border-color: transparent transparent transparent #f5f5f5;
 
   }
 }
@@ -235,6 +236,8 @@ a {
   position: relative;
   margin-bottom: 20px;
   border-radius: 10px;
+  left: 253px;
+  margin-top: 20%;
 
   h2 {
     color: $text;
@@ -270,7 +273,7 @@ blockquote {
 
     &::before {
       left: 50px;
-      top: 180px;
+      top: 156px;
     }
 
     .timeline-img {
@@ -281,6 +284,11 @@ blockquote {
       max-width: 100%;
       width: auto;
       margin-left: 70px;
+    }
+
+    .timeline-img-header {
+      left: 0px;
+      margin-top: 0px;
     }
 
     .timeline-item {
@@ -298,15 +306,15 @@ blockquote {
         .timeline-content {
 
           &::after {
-            content: '';
-            position: absolute;
-            border-style: solid;
-            width: 0;
-            height: 0;
-            top: 30px;
-            left: -15px;
-            // border-width: 10px 15px 10px 0;
-            border-color: transparent #f5f5f5 transparent transparent;
+            // content: '';
+            // position: absolute;
+            // border-style: solid;
+            // width: 0;
+            // height: 0;
+            // top: 30px;
+            // left: -15px;
+            // // border-width: 10px 15px 10px 0;
+            // border-color: transparent #f5f5f5 transparent transparent;
           }
         }
 

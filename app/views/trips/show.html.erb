@@ -13,7 +13,7 @@
     <% @trip.posts.each do |post| %>
       <div class="timeline-item">
         <!-- This is the circle on the line -->
-      <%= link_to trip_post_path(@trip, post) do  %>
+        <%= link_to trip_post_path(@trip, post) do %>
           <div class="timeline-img"></div>
           <div class="timeline-content timeline-card js--fadeInRight">
             <!-- This is the picture class -->
@@ -34,7 +34,7 @@
         <!-- This is the circle on the line -->
       <div class="timeline-img"></div>
 
-      <div class="timeline-content timeline-card js--fadeInRight ">
+      <div class="timeline-content timeline-card js--fadeInLeft ">
         <!-- This is the picture class -->
         <%= link_to "", new_trip_post_path(@trip), class: "last-timeline-img-header" %>
 
@@ -45,7 +45,7 @@
 
     <div class="fixed-bottom">
 
-      <div id="flip" class="text-center">Click to see trip details</div>
+      <div id="flip" >Click to see trip details</div>
 
       <div id="panel">
         <div class="panel-relative">

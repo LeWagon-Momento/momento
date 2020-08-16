@@ -6,14 +6,15 @@
   margin: 10% 20%;
 }
 
-.avatar-large { // this is the avatar in the profile page info
-  width: 100px;
+.avatar-large {
+  width: 15%;
   border-radius: 50%;
   box-shadow: 0 1px 0px 0 rgba(0, 0, 0, -1.9), 0 3px 16px 0 rgba(0, 0, 0, 0.12);
 }
 
 .avatar-name-city {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .name-city {
@@ -26,6 +27,7 @@
 .profile-name {
   font-size: 27px;
   font-weight: bold;
+  width: 400px;
 }
 
 .profile-city {
@@ -34,9 +36,15 @@
 }
 
 .profile-box {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   grid-gap: 35px 50px;
   margin-top: 8%;
+}
+
+.profile-item {
+  flex: 1 1 300px;
 }
 
 .profile-text-field {
@@ -44,6 +52,7 @@
   text-align: center;
   background-color: #F8F8F8;
   width: 300px;
+  min-height: 39px;
   padding: 8px 0px;
   border-style: solid;
   border-width: 1px;
@@ -53,39 +62,64 @@
 
 .profile-text-header {
   font-size: 15px;
-  // font-style: bold;
 }
 
-@media(max-width: 768px) {
-  .user-profile {
-
+@media(max-width: 1082px) {
+  .avatar-name-city {
+    margin: 2% 12.5% 0px;
+    text-align: center;
+    justify-content: center;
   }
 
   .profile-box {
-    position: absolute;
-    bottom: 110px;
-    margin: 0px 10%;
+    margin: 8% 13% 0px;
   }
 
-  .profile-name {
-    text-align: center;
-    position: absolute;
-    bottom: 265px;
-    left: 135px;
-    font-size: 24px;
-    font-weight: bold;
+  .avatar-large {
+    width: 30%;
   }
 
   .profile-text-field {
-    font-size: 15px;
-    background-color: #E8E8E8;
-    width: 300px;
-    padding: 5px;
-    border-radius: 3px;
+    justify-content: center;
+    text-align: center;
+    margin: 0px auto;
   }
 
   .profile-text-header {
-    font-size: 18px;
-    font-style: bold;
+    text-align: center;
+  }
+}
+
+.profile-text-header {
+  font-size: 15px;
+}
+
+@media(max-width: 1016px) {
+  .profile-name {
+    margin-top: 3%;
+    text-align: center;
+  }
+
+  .profile-city {
+    text-align: center;
+  }
+
+  .profile-text-field {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media(max-width: 768px) {
+  .avatar-name-city {
+    margin-top: 20%;
+    justify-content: center;
+  }
+
+  .profile-box {
+    margin: 8% 13% 0px;
+  }
+
+  .profile-text-field {
   }
 }

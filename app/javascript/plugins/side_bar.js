@@ -1,33 +1,36 @@
 
-const navLogo = document.querySelector('.open-side-bar');
-const sideBar = document.querySelector('.sidenav');
-const closeB = document.querySelector('.closebtn');
+/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+const openNav = () => {
+  const sideBarButton = document.querySelector('.openbtn');
+  if (sideBarButton) {
+    sideBarButton.addEventListener('click', (event) => {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main-body").style.marginLeft = "250px";
 
+      const sideBar = document.getElementById('mySidebar');
+      sideBar.insertAdjacentHTML('afterbegin', '<a id="closebtn">&times;</a>')
+    })
+  }
+}
 
-const toggleOn = () => {
-  sideBar.style.width = "150px" ;
-  document.querySelector(".navbar-push").style.marginLeft = "150px";
-  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-};
-
-const toggleOff = () => {
-  sideBar.style.width = "0px";
-  document.querySelector(".navbar-push").style.marginLeft = "0";
-  document.body.style.backgroundColor = "white";
-};
-
-const navBarHere = document.querySelector('.navbar');
-
-
-const toggleNav = () => {
-if (navBarHere) {
-navLogo.addEventListener('click', toggleOn);}}
+/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
 const closeNav = () => {
-if (navBarHere) {
-closeB.addEventListener('click', toggleOff);}}
+  const mainBody = document.querySelector('#main-body');
+  if (mainBody) {
+    mainBody.addEventListener('click', (event) => {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main-body").style.marginLeft = "0";
+    })
+  }
 
+  const sideBar = document.getElementById('mySidebar');
 
+  if (sideBar) {
+    sideBar.addEventListener('click', (event) => {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main-body").style.marginLeft = "0";
+    })
+  }
+}
 
-export { toggleNav, closeNav };
-
-
+export { openNav, closeNav };

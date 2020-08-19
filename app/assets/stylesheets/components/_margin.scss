@@ -1,6 +1,7 @@
-.main-body {
+#main-body {
   // margin: 1% 0.5%;
   margin-top: 76px;
+  transition: margin-left 1s; /* If you want a transition effect */
 }
 
 .spacing {
